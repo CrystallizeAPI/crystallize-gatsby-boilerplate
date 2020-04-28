@@ -1,4 +1,3 @@
-/* eslint react/no-multi-comp: 0 */
 import React, { useState } from "react"
 import Img from "@crystallize/react-image"
 import isEqual from "lodash/isEqual"
@@ -169,11 +168,9 @@ export const query = graphql`
           path
         }
       }
-
       product: catalogue(language: "en", path: $path) {
         ...crystallize_item
         ...crystallize_product
-
         topics {
           id
           items(first: 4) {

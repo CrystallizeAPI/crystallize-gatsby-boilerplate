@@ -10,7 +10,6 @@ export const Outer = styled.header`
   align-items: center;
   max-width: 1500px;
   margin: 0 auto 50px;
-
   ${responsive.xs} {
     flex-direction: column;
   }
@@ -46,12 +45,10 @@ export const NavListItem = styled.li`
   padding: 0;
   display: inline-block;
   margin: 0 5px;
-
   > a {
     display: inline-block;
     padding: 10px 10px;
     transition: all 100ms;
-
     &:hover {
       text-decoration: underline;
     }

@@ -24,8 +24,8 @@ export default function IndexPage({ data }) {
     <Layout title="Home" headerItems={headerItems}>
       <Outer>
         <Header>
-          <H1>Oh hi there!</H1>
-          <p>Cool of you to join us.</p>
+          <H1>Test av </H1>
+          <p>forsøk på å forenkle og distribuere. her bruk avCrystallize.com sitt produkt db koblet direkte til gatsbysiden.</p>
         </Header>
 
         {grid && (
@@ -48,7 +48,7 @@ export const query = graphql`
           path
         }
       }
-      grid(id: "5dc3fe4d43b90109229ee27b") {
+      grid(id: "5ea75d7853d66b001c00bd5b") {
         id
         name
         rows {
