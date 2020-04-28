@@ -10,7 +10,7 @@ const Header = ({ headerItems }) => {
     <Outer>
       <Link to="/">
         <Logo>
-          <IconLogo />
+           <h1>Ørn Forlag</h1> {IconLogo}
         </Logo>
       </Link>
       <Nav>

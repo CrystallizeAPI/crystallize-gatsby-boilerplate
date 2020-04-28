@@ -24,8 +24,7 @@ const Layout = ({ headerItems, children, title }) => {
         <
         Outer >
         Nettside av: { ` ` } <
-        a href = "https://martin-andersen-cv.now.sh" > Martin Andersen < /a> { ` ` } | Laget med { ` ` } <
-        a href = "https://www.gatsbyjs.org" > Gatsby < /a> og <a href="https:/ / www.crystallize.com ">Crystallize</a> <
+        a href = "https://martin-andersen-cv.now.sh" > Martin Andersen < /a> { ` ` } | Laget med { ` ` } <a href = "https://www.gatsbyjs.org" > Gatsby < /a> og <a href="https:/ / www.crystallize.com ">Crystallize</a> <
         /Outer> <
         /footer> <
         /IntlProvider>
