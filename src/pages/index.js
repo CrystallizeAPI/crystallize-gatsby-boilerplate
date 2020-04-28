@@ -24,17 +24,21 @@ export default function IndexPage({ data }) {
     <Layout title="Home" headerItems={headerItems}>
       <Outer>
         <Header>
-          <H1>Test</H1>
-          <p>forsøk på å forenkle og distribuere. her bruk avCrystallize.com sitt produkt db koblet direkte til gatsbysiden.</p>
-        </Header>
-
+          <H1> Test </H1>
+          {" "}
+          <p>
+            {" "}
+            forsøk på å forenkle og distribuere.her bruk avCrystallize.com sitt
+            produkt db koblet direkte til gatsbysiden.{" "}
+          </p>{" "}
+        </Header>{" "}
         {grid && (
           <StyledGrid
             model={grid}
             cellComponent={({ cell }) => <Product data={cell.item} />}
           />
-        )}
-      </Outer>
+        )}{" "}
+      </Outer>{" "}
     </Layout>
   )
 }
