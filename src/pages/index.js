@@ -48,7 +48,7 @@ export const query = graphql`
           path
         }
       }
-      grid(id: "5ea82364ba5038001c018462") {
+      grid(id: "5ea82696ba5038001c018468") {
         id
         name
         rows {
