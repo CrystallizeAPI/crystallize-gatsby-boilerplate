@@ -148,7 +148,7 @@ export const ProductFooter = styled.div`
 
 export const Price = styled.div`
   text-align: center;
-  color: ${colors.darkText};
+  color: black;
   font-size: 30px;
   margin-right: 20px;
 
