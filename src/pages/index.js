@@ -21,15 +21,14 @@ export default function IndexPage({ data }) {
   } = data
 
   return (
-    <Layout title="Home" headerItems={headerItems}>
+    <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
       <Outer>
         <Header>
           <H1> Test </H1>
           {" "}
           <p>
             {" "}
-            forsøk på å forenkle og distribuere.her bruk avCrystallize.com sitt
-            produkt db koblet direkte til gatsbysiden.{" "}
+            Ørn forlag brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
           </p>{" "}
         </Header>{" "}
         {grid && (
