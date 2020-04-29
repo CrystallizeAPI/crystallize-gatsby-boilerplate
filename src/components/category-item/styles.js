@@ -12,8 +12,8 @@ export const imageSize = {
 export const ProductOuter = styled(Link)`
   display: flex;
   flex-direction: column;
-  height: 100%;
-  align-items: stretch;
+  height: contain;
+  align-items: contain;
   justify-content: center;
   border-radius: 12px;
   position: relative;
@@ -37,12 +37,12 @@ export const ProductOuter = styled(Link)`
 
 export const ProductInner = styled.span`
   text-decoration: none;
-  width: 100%;
+  width: contain;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: contain;
   font-weight: 600;
   color: ${colors.darkText};
   text-align: center;

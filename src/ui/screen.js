@@ -1,7 +1,7 @@
 // Screen sizes
 export const screen = {
-  xs: 500,
-  sm: 768,
+  xs: 400,
+  sm: 600,
   md: 1024,
   lg: 1600,
   get xsMin() {
