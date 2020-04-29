@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Grid from "@crystallize/grid-renderer/react"
 import styled from "styled-components"
-
 import Layout from "components/layout"
 import Product from "components/category-item"
 

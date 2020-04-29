@@ -10,6 +10,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-react-head`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -17,6 +18,56 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+              fonts: [
+                {
+                  family: `Oswald`,
+                  subsets: [`latin`],
+                },
+                {
+                  family: `Open Sans`,
+                  variants: [`400`, `700`]
+                },
+              ],
+            },
+          },
+        {
+            resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+            options: {
+              siteUrl: `https://crystallize-gatsby-ornforlag.now.sh`,
+            },
+        },
+        {
+            resolve: "gatsby-plugin-web-font-loader",
+            options: {
+              custom: {
+                families: ["Eina, Eina-SemiBold"],
+                urls: ["/fonts/fonts.css"]
+              }
+            }
+        },
+        {
+            resolve: `gatsby-plugin-google-analytics-gdpr`,
+            options: {
+              // The property ID; the tracking code won't be generated without it.
+              trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID", 
+              // Optional parameter (default false) - Enable analytics in development mode.
+              enableDevelopment: true, // default false
+              // Optional parameter (default true) - Some countries (such as Germany) require you to use the _anonymizeIP function for Google Analytics. Otherwise you are not allowed to use it.
+              anonymizeIP: true,
+              // Optional parameter (default false) - Starts google analytics with cookies enabled. In some countries (such as Germany) this is not allowed.
+              autoStartWithCookiesEnabled: false, 
+              // Optional parameter - Configuration for react-ga and google analytics 
+              reactGaOptions: {
+                  debug: true,
+                  gaOptions: {
+                      sampleRate: 10
+                  }
+              }
+            },
+          },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -39,16 +90,16 @@ module.exports = {
                 icon: `src/images/crystallize-icon.png`,
                 background_color: `#f3f4f6`,
                 theme_color: `#B7E2E4`,
-                display: `minimal-ui`,
+                display: `standalone`,
             },
         },
         {
-            resolve: "gatsby-source-graphql",
+            resolve: `gatsby-source-graphql`,
             options: {
                 // This type will contain remote schema Query type
-                typeName: "CRYSTALLIZE",
+                typeName: `CRYSTALLIZE`,
                 // This is the field under which it's accessible
-                fieldName: "crystallize",
+                fieldName: `crystallize`,
                 // URL to query from
                 url: `${process.env.CRYSTALLIZE_API_BASE}/${process.env.CRYSTALLIZE_TENANT_ID}/catalogue`,
             },
@@ -56,6 +107,6 @@ module.exports = {
         "gatsby-plugin-styled-components",
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
+         `gatsby-plugin-offline`,
     ],
 }
