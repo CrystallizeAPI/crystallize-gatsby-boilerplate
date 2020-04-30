@@ -18,7 +18,12 @@
   Gatsby is a free and open source framework based on React
 </p>
 
-[![React: latest][0]][1] [![Gatsby: latest][2]][3]
+[![Edit gatsby-starter-crystyallize](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/webmaeistro/gatsby-theme-crystallize/tree/master/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&moduleview=1&theme=dark&view=preview)
+
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git)
+
+
+
 
 The theme you need to get a frontend up and running on the
 [headless ecommerce][8] & GraphQL based [product Information Management][9]
@@ -131,8 +136,6 @@ NB! react-framework orientated more then traditional gatsby file struckture
  ## 💫 Deploy
  
 There are multiple alternatives for deployments, check out one of the ones below:
-
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git)
 
 
 
