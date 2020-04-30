@@ -1,16 +1,9 @@
 {
-<<<<<<< HEAD
-    "name": "gatsby-theme-crystyallize",
+    "name": "gatsby-theme-crystallize",
     "private": false,
-    "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby",
-    "version": "0.1.42",
-=======
-    "name": "gatsby-starter-crystyallize",
-    "private": false,
-    "description": "A simple starter to get up and developing quickly with Crystallize.com and Gatsbyjs",
-    "version": "0.1.4",
->>>>>>> b9ece29ed08297b5fae842edd90e9ea3b2d77890
-    "author": "Martin Andersen <marander@pm.me>",
+    "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby. For blazing fast Ecomm sites!",
+    "version": "0.2.42",
+    "author": "Martin Andersen Håkon Krogh <marander@pm.me> (@webmaeistro @hakonkrogh)",
     "dependencies": {
         "@crystallize/content-transformer": "^5.2.1",
         "@crystallize/grid-renderer": "^2.0.01",
@@ -34,11 +27,10 @@
         "gatsby-source-filesystem": "^2.1.40",
         "gatsby-source-graphql": "^2.5.0",
         "gatsby-transformer-sharp": "^2.5.0",
-        "graphql": "^14.0.0",
+        "graphql": "^15.0.0",
         "graphql-tag": "^2.10.3",
         "lodash": "^4.17.15",
         "netlify-lambda": "^1.6.3",
-        "peer": "^0.5.2",
         "polished": "^3.4.2",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
@@ -53,15 +45,16 @@
         "video.js": "^7.7.5"
     },
     "devDependencies": {
-        "prettier": "^2.0.5"
+        "prettier": "^2.0.5",
+        "graphql": "^14.0.0"
     },
     "keywords": [
         "gatsby",
-        "gatsby-starter",
         "gatsby-plugin",
+        "gatsby-theme",
         "crystallize",
         "ornforlag",
-        "books"
+        "Ecommerce"
     ],
     "license": "MIT",
     "scripts": {
@@ -74,9 +67,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+        "url": "https://github.com/webmaeistro/gatsby-theme-crystallize"
     },
     "bugs": {
-        "url": "https://github.com/gatsbyjs/gatsby/issues"
+        "url": "https://github.com/webmaeistro/gatsby-theme-crystallize/issues"
     }
 }

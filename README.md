@@ -15,12 +15,22 @@
   Blazing fast Ecomm site in every way that matters!
 </h3>
 <p align="center">
-  Gatsby is a free and open source framework based on React
+
 </p>
+
+
+### This is a fork with few modules added from work done by Håkon Krogh and the good folks @CrystallizeAPI
+
+Original repo: https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate
+
+-added keywords to capture gatsbyjs telemetry 
+-published to npmjs.
+-Gatsbyjs-ified nameing convention: ~crystallize-gatsby-boilerplate~ to gatsby-theme-crystallize 
+-published to npmjs as a gatsby-theme 
 
 [![Edit gatsby-starter-crystyallize](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/webmaeistro/gatsby-theme-crystallize/tree/master/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&moduleview=1&theme=dark&view=preview)
 
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git)
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/webmaeistro/gatsby-theme-crystallize.git)
 
 
 
@@ -123,7 +133,112 @@ gatsby develop
   <!-- AUTO-GENERATED-CONTENT:END -->
 
 
-### gatsby-source-GraphQL enought said 
+### 🎓 crystallize.com 
+
+https://crystallize.com/learn/developer-guides
+
+**How to Fetch Products**
+Products are a core part of the **catalogue**.
+
+Sample Product Query:
+graphql:
+```
+query {
+  catalogue(language: "en", path: "/cuddly-toys/kevin-the-kiwi") {
+    ...item
+    ...product
+  }
+}
+fragment item on Item {
+  id
+  name
+  type
+  path
+  components {
+    name
+    type
+    meta {
+      key
+      value
+    }
+    content {
+      ...singleLine
+      ...richText
+      ...imageContent
+      ...paragraphCollection
+    }
+  }
+}
+fragment product on Product {
+  vatType {
+    name
+    percent
+  }
+  isVirtual
+  isSubscriptionOnly
+  variants {
+    id
+    name
+    sku
+    price
+    stock
+    isDefault
+    image {
+      url
+      altText
+      key
+      variants {
+        key
+        width
+      }
+    }
+    subscriptionPlans {
+      id
+      name
+      initialPeriod
+      initialPrice
+      recurringPeriod
+      recurringPrice
+    }
+  }
+}
+fragment image on Image {
+  url
+  altText
+  key
+  variants {
+    url
+    width
+    key
+  }
+}
+fragment imageContent on ImageContent {
+  images {
+    ...image
+  }
+}
+fragment singleLine on SingleLineContent {
+  text
+}
+fragment richText on RichTextContent {
+  json
+  html
+  plainText
+}
+fragment paragraphCollection on ParagraphCollectionContent {
+  paragraphs {
+    title {
+      ...singleLine
+    }
+    body {
+      ...richText
+    }
+    images {
+      ...image
+    }
+  }
+}
+```
 
 We use the `src/` directory to hold the actual entry pages
 related to query result in `gatsby-node.js`.
@@ -144,6 +259,131 @@ There are multiple alternatives for deployments, check out one of the ones below
 - Register a Vercel account
 - Install Vercel Now: `npm i -g now`
 - Run `now`
+
+
+
+extraction of gatsby-node.js:
+```
+ // Map Crystallize shape names to the page templates
+  const templates = {
+    Article: path.resolve(`src/page-templates/article.js`),
+    Product: path.resolve(`src/page-templates/product/index.js`),
+    Folder: path.resolve(`src/page-templates/folder.js`),
+  }
+```
+  
+   * Get items 5 levels deep from Crystallize.
+   * You can get even more levels by quering more children:
+   * children {
+   *   path
+   *   shape {
+   *     name
+   *   }
+   * }
+  
+extraction from gatsby-node.js
+  ``` 
+  return graphql(
+    `
+      query loadAllCrystallizeCatalogueItems {
+        crystallize {
+          catalogue(language: "en", path: "/") {
+            children {
+              path
+              shape {
+                name
+              }
+              children {
+                path
+                shape {
+                  name
+                }
+                children {
+                  path
+                  shape {
+                    name
+                  }
+                  children {
+                    path
+                    shape {
+                      name
+                    }
+                    children {
+                      path
+                      shape {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Reduce all items into a single flat array
+    const items = []
+    {
+      ;(function add({ path, shape, children }) {
+        if (path && shape) {
+          // Ensure that we have a template for this shape
+          if (shape.name in templates) {
+            items.push({ path, shape, component: templates[shape.name] })
+          } else {
+            items.push({ path, shape, component: templates.Folder })
+            console.log(
+              `No template was found for shape "${shape.name}". "${path}" is rendered using the Folder template`
+            )
+          }
+        }
+        if (children) {
+          children.forEach(add)
+        }
+      })(result.data.crystallize.catalogue)
+    }
+```
+  #### Create pages for each node
+   
+          Add optional context data to be inserted
+           as props into the page component..
+          
+           The context data can also be used as
+           arguments to the page GraphQL query.
+          
+           The page "path" is always available as a GraphQL
+           argument.
+        },
+      })
+    })
+  })
+}
+
+```
+
+Fast Ecommerce API Service
+Our fast headless ecommerce API makes it easy for developers to build smashing e-commerce experiences. Snappy frontend performance is great for user experience, ecommerce conversion and of course ecommerce SEO.
+
+Developers have super fast APIs ready to play with including:
+
+Low latency GraphQL for product information
+GraphQL API with mutations for product and order creation
+Webhooks for automation of access and entitlement
+
+Fetch product data with GraphQL easily
+Use the simple and powerful GraphQL language to query your product information in real time. The Crystallize API is designed to deliver your product information via GraphQL in milliseconds.
+
+The fast response times enables you to build snappy user experiences on top of Crystallize. Our Fast API give you SEO findability as one of the most important points in the ecommerce SEO checklist. You can easily choose what data to transfer for the query you are performing to lower the data transfer. So, both low latency and small amount of data transfer. Sweet.
+
+
+Powerful GraphQL API mutations for product and subscription management
+Crystallize also comes with a powerful mutations for the GraphQL API that enables you to create product imports, create an orders or check the status of a customers subscription.
+
 
 
 [0]: https://img.shields.io/badge/react-latest-44cc11.svg?style=flat-square

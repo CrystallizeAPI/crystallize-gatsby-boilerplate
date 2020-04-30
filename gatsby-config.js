@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        title: `Crystallize-orn-vipps`,
-        description: `Headless ecommerce running on Crystallize and Gatsby with hopefully vipps express`,
+        title: `gatsby-theme-crystallize`,
+        description: `Headless ecommerce running on Crystallize and Gatsby with hopefully vipps express soon`,
         author: `@webmaeistro`,
     },
     plugins: [
@@ -33,6 +33,18 @@ module.exports = {
               ],
             },
           },
+          {
+            resolve: `gatsby-source-graphql`,
+            options: {
+                // This type will contain remote schema Query type
+                typeName: `CRYSTALLIZE`,
+                // This is the field under which it's accessible
+                fieldName: `crystallize`,
+                // URL to query from
+                url: `${process.env.CRYSTALLIZE_API_BASE}/${process.env.CRYSTALLIZE_TENANT_ID}/catalogue`,
+            },
+        },
+        "gatsby-plugin-styled-components",
         {
             resolve: `gatsby-plugin-react-helmet-canonical-urls`,
             options: {
@@ -84,27 +96,16 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `ornforlag`,
-                short_name: `orn`,
+                name: `Gatsby-theme-crystallize`,
+                short_name: `crystallizeEcomm`,
                 start_url: `/`,
                 icon: `src/images/crystallize-icon.png`,
                 background_color: `#f3f4f6`,
                 theme_color: `#B7E2E4`,
-                display: `standalone`,
+                display: `minimal-ui`,
             },
         },
-        {
-            resolve: `gatsby-source-graphql`,
-            options: {
-                // This type will contain remote schema Query type
-                typeName: `CRYSTALLIZE`,
-                // This is the field under which it's accessible
-                fieldName: `crystallize`,
-                // URL to query from
-                url: `${process.env.CRYSTALLIZE_API_BASE}/${process.env.CRYSTALLIZE_TENANT_ID}/catalogue`,
-            },
-        },
-        "gatsby-plugin-styled-components",
+        
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
          `gatsby-plugin-offline`,
