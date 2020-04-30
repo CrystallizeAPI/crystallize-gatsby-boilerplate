@@ -366,26 +366,6 @@ extraction from gatsby-node.js
 
 ```
 
-Fast Ecommerce API Service
-Our fast headless ecommerce API makes it easy for developers to build smashing e-commerce experiences. Snappy frontend performance is great for user experience, ecommerce conversion and of course ecommerce SEO.
-
-Developers have super fast APIs ready to play with including:
-
-Low latency GraphQL for product information
-GraphQL API with mutations for product and order creation
-Webhooks for automation of access and entitlement
-
-Fetch product data with GraphQL easily
-Use the simple and powerful GraphQL language to query your product information in real time. The Crystallize API is designed to deliver your product information via GraphQL in milliseconds.
-
-The fast response times enables you to build snappy user experiences on top of Crystallize. Our Fast API give you SEO findability as one of the most important points in the ecommerce SEO checklist. You can easily choose what data to transfer for the query you are performing to lower the data transfer. So, both low latency and small amount of data transfer. Sweet.
-
-
-Powerful GraphQL API mutations for product and subscription management
-Crystallize also comes with a powerful mutations for the GraphQL API that enables you to create product imports, create an orders or check the status of a customers subscription.
-
-
-
 [0]: https://img.shields.io/badge/react-latest-44cc11.svg?style=flat-square
 [1]: https://github.com/facebook/react
 [2]: https://img.shields.io/badge/next-latest-44cc11.svg?style=flat-square
