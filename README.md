@@ -1,12 +1,30 @@
-# Crystallize Gatsby Boilerplate
+# Gatsby-theme-Crystallize 
+<p align="center">
+  <a href="https://gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsbyjs + <a href="https://crystallize.com">Crystallize.com </a> <3 GraphQL
+</h1>
+
+<h3 align="center">
+  ⚛️ 📄 🚀
+</h3>
+<h3 align="center">
+  Blazing fast Ecomm site in every way that matters!
+</h3>
+<p align="center">
+  Gatsby is a free and open source framework based on React
+</p>
 
 [![React: latest][0]][1] [![Gatsby: latest][2]][3]
 
-The bare minimum skeleton you need to get a frontend up and running on the
+The theme you need to get a frontend up and running on the
 [headless ecommerce][8] & GraphQL based [product Information Management][9]
-service [Crystallize][10]. [React commerce with Gatsby][11].
+service [Crystallize][10]. [React/graphql commerce with Gatsby][11].
 
-This frontend boilerplate is a great starting point when building [React
+This  crystallize.com theme is a great starting point when building [React
 ecommerce][11] experiences with [frontend performance][12] in focus. You can
 have rich ecommerce content with the super structured [PIM][13] engine in
 Crystallize powering your product catalogue.
@@ -16,43 +34,107 @@ ingredient in the [ecommerce SEO checklist][14]. [Rich content driven ecommerce
 experiences][15] builds the foundation for a [content strategy for exponential
 growth marketing][16].
 
-Check it out, the boilerplate is Open Source and MIT licensed.
+Check it out, the starter and theme is Open Source and MIT licensed.
 
 ## Getting Started
 
-You can use [Crystallize CLI][17] to bootstrap a project with this
-`Gatsby + React` boilerplate.
+## 🚀 Quick start
 
-Simply run the following command (>= Node 8 required):
+  1.  **Setup this site.**
 
-```sh
-npx @crystallize/cli my-project
+      Use the Gatsby CLI to Clone this site.
+
+      ```sh
+      # Clone this Repositories
+      gatsby new crystallize-project https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git
+      ```
+
+  2.  **Setup your API Dash**
+
+     goto crystallize.com register a user (its free up to a sertan point see pricing) and goto security tab and copy your tenant name
+example:
+      ```
+      tenant=your-tenant
+      ```
+
+ 3.  **Start developing.**
+
+      Navigate into your new site’s directory and start it up.
+
+      ```sh
+      cd crystallize-project
+      
+      
+      ```
+
+  
+##  two gatsby-specific things to do first 
+ 
+### A: 
+
+Open the `crystallize-project` directory in your code editor of choice and make sure you'r `gatsby.config` has the following lines (among others):
+
+file: /gatsby.config:
+```
+{
+            resolve: `gatsby-source-graphql`,
+            options: {
+                // This type will contain remote schema Query type
+                typeName: `CRYSTALLIZE`,
+                // This is the field under which it's accessible
+                fieldName: `crystallize`,
+                // URL to query from
+                url: `${process.env.CRYSTALLIZE_API_BASE}/${process.env.CRYSTALLIZE_TENANT_ID}/catalogue`,
+            },
+        },
 ```
 
-This will walk you through the steps of specifying your tenant, choosing the
-template (Gatsby.js + React) and adding additional features such as Netlify.
+### B: 
 
-Once your project has been created, you can simply navigate into your project's
-directory and run the following to start up your development server:
+create a file named `crysallize.config` in the root of your project and copy paste the following lines:
 
-```sh
-npm run dev
-# or
-yarn dev
+```
+CRYSTALLIZE_API_BASE=https://api.crystallize.com
+CRYSTALLIZE_TENANT_ID=<your-tenant-from-section-2-above>
 ```
 
-This will start up the server on http://localhost:8000 for development.
+4.  **fire up your site and customize it!**
 
-## App Structure
+Run the following in the root of your project:
 
-### `src/page-templates`
+```
+gatsby develop
+```
 
-We use the `src/page-components/` directory to hold the actual entry pages
+  ## 🎓 Learning Gatsby
+
+  Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+
+  - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+
+  - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+
+ 
+  <!-- AUTO-GENERATED-CONTENT:END -->
+
+
+### gatsby-source-GraphQL enought said 
+
+We use the `src/` directory to hold the actual entry pages
 related to query result in `gatsby-node.js`.
 
-## Deploying Your Project
+Styled components and UI.
 
+NB! react-framework orientated more then traditional gatsby file struckture
+
+
+ ## 💫 Deploy
+ 
 There are multiple alternatives for deployments, check out one of the ones below:
+
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git)
+
+
 
 ### Deploying with [Vercel Now][19]
 
@@ -60,12 +142,6 @@ There are multiple alternatives for deployments, check out one of the ones below
 - Install Vercel Now: `npm i -g now`
 - Run `now`
 
-### Deploying with [Netlify][18]
-
-- Register a Netlify account
-- Create a new project
-- Link it with your Git repository
-- Push to `master`
 
 [0]: https://img.shields.io/badge/react-latest-44cc11.svg?style=flat-square
 [1]: https://github.com/facebook/react
