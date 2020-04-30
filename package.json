@@ -1,7 +1,7 @@
 {
-    "name": "gatsby-startyer-crystyallize",
+    "name": "gatsby-starter-crystyallize",
     "private": false,
-    "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby",
+    "description": "A simple starter to get up and developing quickly with Crystallize.com and Gatsbyjs",
     "version": "0.1.4",
     "author": "Martin Andersen <marander@pm.me>",
     "dependencies": {
@@ -49,10 +49,12 @@
         "prettier": "^2.0.5"
     },
     "keywords": [
-        "crystallize",
         "gatsby",
         "gatsby-starter",
-        "gatsby-plugin"
+        "gatsby-plugin",
+        "crystallize",
+        "ornforlag",
+        "books"
     ],
     "license": "MIT",
     "scripts": {
