@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
     "name": "gatsby-theme-crystyallize",
     "private": false,
     "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby",
     "version": "0.1.42",
+=======
+    "name": "gatsby-starter-crystyallize",
+    "private": false,
+    "description": "A simple starter to get up and developing quickly with Crystallize.com and Gatsbyjs",
+    "version": "0.1.4",
+>>>>>>> b9ece29ed08297b5fae842edd90e9ea3b2d77890
     "author": "Martin Andersen <marander@pm.me>",
     "dependencies": {
         "@crystallize/content-transformer": "^5.2.1",
@@ -49,10 +56,12 @@
         "prettier": "^2.0.5"
     },
     "keywords": [
-        "crystallize",
         "gatsby",
         "gatsby-starter",
-        "gatsby-plugin"
+        "gatsby-plugin",
+        "crystallize",
+        "ornforlag",
+        "books"
     ],
     "license": "MIT",
     "scripts": {
