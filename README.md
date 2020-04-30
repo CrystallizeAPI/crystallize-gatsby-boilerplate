@@ -1,12 +1,12 @@
-# Gatsby-starter-Crystallize 
+# Gatsby-theme-Crystallize 
 
 [![React: latest][0]][1] [![Gatsby: latest][2]][3]
 
-The starter and theme you need to get a frontend up and running on the
+The theme you need to get a frontend up and running on the
 [headless ecommerce][8] & GraphQL based [product Information Management][9]
 service [Crystallize][10]. [React/graphql commerce with Gatsby][11].
 
-This starter with crystallize theme is a great starting point when building [React
+This  crystallize.com theme is a great starting point when building [React
 ecommerce][11] experiences with [frontend performance][12] in focus. You can
 have rich ecommerce content with the super structured [PIM][13] engine in
 Crystallize powering your product catalogue.
