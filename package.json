@@ -1,8 +1,8 @@
 {
-    "name": "gatsby-startyer-crystyallize",
+    "name": "gatsby-theme-crystyallize",
     "private": false,
     "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby",
-    "version": "0.1.4",
+    "version": "0.1.42",
     "author": "Martin Andersen <marander@pm.me>",
     "dependencies": {
         "@crystallize/content-transformer": "^5.2.1",
