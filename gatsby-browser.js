@@ -4,4 +4,4 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require("video.js/dist/video-js.css")
+//require("video.js/dist/video-js.css")
