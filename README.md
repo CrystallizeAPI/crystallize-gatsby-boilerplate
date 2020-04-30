@@ -1,4 +1,22 @@
 # Gatsby-theme-Crystallize 
+<p align="center">
+  <a href="https://gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsbyjs + <a href="https://crystallize.com">Crystallize.com </a> <3 GraphQL
+</h1>
+
+<h3 align="center">
+  ⚛️ 📄 🚀
+</h3>
+<h3 align="center">
+  Blazing fast Ecomm site in every way that matters!
+</h3>
+<p align="center">
+  Gatsby is a free and open source framework based on React
+</p>
 
 [![React: latest][0]][1] [![Gatsby: latest][2]][3]
 
@@ -31,33 +49,32 @@ Check it out, the starter and theme is Open Source and MIT licensed.
       gatsby new crystallize-project https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git
       ```
 
-  1.  **Setup your API Dash**
+  2.  **Setup your API Dash**
 
      goto crystallize.com register a user (its free up to a sertan point see pricing) and goto security tab and copy your tenant name
 example:
       ```
-      tenant=orn-forlag
+      tenant=your-tenant
       ```
 
-  1.  **Start developing.**
+ 3.  **Start developing.**
 
       Navigate into your new site’s directory and start it up.
 
       ```sh
-      cd crystallize-projhect
-      yarn / npm install
+      cd crystallize-project
+      
       
       ```
 
   
-  2.  **Open the source code and start editing!**
+##  two gatsby-specific things to do first 
+ 
+### A: 
 
-      Your site is now running at `http://localhost:8000`!
+Open the `crystallize-project` directory in your code editor of choice and make sure you'r `gatsby.config` has the following lines (among others):
 
-      _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-      Open the `crystallize-project` directory in your code editor of choice and make sure you'r `gatsby.config` has the following lines (among others):
-
+file: /gatsby.config:
 ```
 {
             resolve: `gatsby-source-graphql`,
@@ -72,14 +89,17 @@ example:
         },
 ```
 
-3. create a file named `crysallize.config` in the root of your project and copy paste the following:
+### B: 
+
+create a file named `crysallize.config` in the root of your project and copy paste the following lines:
 
 ```
 CRYSTALLIZE_API_BASE=https://api.crystallize.com
-CRYSTALLIZE_TENANT_ID=orn-forlag
+CRYSTALLIZE_TENANT_ID=<your-tenant-from-section-2-above>
 ```
 
-4.
+4.  **fire up your site and customize it!**
+
 Run the following in the root of your project:
 
 ```
@@ -97,9 +117,8 @@ gatsby develop
  
   <!-- AUTO-GENERATED-CONTENT:END -->
 
-## App Structure
 
-### gatsby-source-GraphQL engoush said 
+### gatsby-source-GraphQL enought said 
 
 We use the `src/` directory to hold the actual entry pages
 related to query result in `gatsby-node.js`.
