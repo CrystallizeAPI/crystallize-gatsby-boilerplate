@@ -2,3 +2,5 @@
 package.json
 package-lock.json
 public
+__tests__
+__mock__
