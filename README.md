@@ -61,7 +61,7 @@ Check it out, the starter and theme is Open Source and MIT licensed.
 
       ```sh
       # Clone this Repositories
-      gatsby new crystallize-project https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git
+      gatsby new crystallize-project https://github.com/webmaeistro/gatsby-theme-crystallize.git
       ```
 
   2.  **Setup your API Dash**
@@ -130,7 +130,7 @@ gatsby develop
   - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
  
-  <!-- AUTO-GENERATED-CONTENT:END -->
+
 
 
 ### 🎓 crystallize.com 
