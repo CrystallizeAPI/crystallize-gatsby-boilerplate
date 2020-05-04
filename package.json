@@ -2,7 +2,7 @@
     "name": "gatsby-theme-crystallize",
     "private": false,
     "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby. For blazing fast Ecomm sites!",
-    "version": "0.3.42",
+    "version": "0.5.0",
     "author": "Martin Andersen Håkon Krogh <marander@pm.me> (@webmaeistro @hakonkrogh)",
     "dependencies": {
         "@crystallize/content-transformer": "^5.2.1",
