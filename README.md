@@ -18,6 +18,7 @@
 
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/020d494c-4101-4dfe-9705-7e87c95856b6/deploy-status)](https://app.netlify.com/sites/ornforlag-crystallize-gatsby/deploys)
 
 ### This is a fork with few modules added from work done by Håkon Krogh and the good folks @CrystallizeAPI
 
