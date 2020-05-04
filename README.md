@@ -18,6 +18,7 @@
 
 </p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/020d494c-4101-4dfe-9705-7e87c95856b6/deploy-status)](https://app.netlify.com/sites/ornforlag-crystallize-gatsby/deploys)
 
 ### This is a fork with few modules added from work done by Håkon Krogh and the good folks @CrystallizeAPI
 
@@ -61,7 +62,7 @@ Check it out, the starter and theme is Open Source and MIT licensed.
 
       ```sh
       # Clone this Repositories
-      gatsby new crystallize-project https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate.git
+      gatsby new crystallize-project https://github.com/webmaeistro/gatsby-theme-crystallize.git
       ```
 
   2.  **Setup your API Dash**
@@ -130,7 +131,7 @@ gatsby develop
   - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
  
-  <!-- AUTO-GENERATED-CONTENT:END -->
+
 
 
 ### 🎓 crystallize.com 

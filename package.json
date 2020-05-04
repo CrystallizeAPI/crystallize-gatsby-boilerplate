@@ -83,6 +83,7 @@
         "start": "concurrently 'npm run develop' 'yarn start:server'",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
+        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
         "test": "jest",
         "cy:open": "cypress open",
         "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
