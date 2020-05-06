@@ -82,7 +82,7 @@
     "scripts": {
         "build": "gatsby build && yarn build:server",
         "develop": "gatsby develop",
-        "start": "concurrently 'gatsby build' 'yarn start:server'",
+        "start": "concurrently 'gatsby build' 'yarn run build:server'",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -92,8 +92,8 @@
         "cy:run": "cypress run",
         "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
         "test:lambda": "echo \"Error: no test specified\" && exit 1",
-        "start:server": "netlify-lambda serve src/lambda/ -c webpack.server.js",
-        "build:server": "netlify-lambda build src/lambda/"
+        "start:server": "netlify-lambda serve src/lambda -c webpack.server.js",
+        "build:server": "netlify-lambda build src/lambda"
     },
     "repository": {
         "type": "git",
