@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
-const config = require('../../../config');
-const vippsApiCall = require('./utils/vipps-utils.js');
-const normallizer = require('./utils/normalizers/vipps');
+const config = require('../../config');
+const vippsApiCall = require('../../utils/vipps-utils.js');
+const normallizer = require('../../utils/normalizers/vipps');
 const {
   persistCrystallizeOrder
 } = require('../../../lib/crystallize-order-handler');
