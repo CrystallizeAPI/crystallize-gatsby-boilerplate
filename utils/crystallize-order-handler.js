@@ -15,8 +15,13 @@ const apiCall = async (query, variables, operationName, update = false) => {
     const options = {
       headers: {
         'content-type': 'application/json',
+<<<<<<< HEAD
         'X-Crystallize-Access-Token-Secret': CRYSTALLIZE_SECRET_TOKEN,
         'X-Crystallize-Access-Token-Id': CRYSTALLIZE_SECRET_TOKEN_ID
+=======
+        'X-Crystallize-Access-Token-Secret': MY_CRYSTALLIZE_SECRET_TOKEN,
+        'X-Crystallize-Access-Token-Id': MY_CRYSTALLIZE_SECRET_TOKEN_ID
+>>>>>>> d5e8465c32d297ce2f5f8a84cf831c8c3d3484cd
       },
       uri: update ? CRYSTALLIZE_CORE_API_URL : ORDER_API_URL,
       json: true,

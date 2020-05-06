@@ -1,19 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-<<<<<<< HEAD
-const config = require('../../.env');
-const vippsApiCall = require('./_utils/.vipps-utils');
-const normallizer = require('./_normalizer/.vipps');
-const {
-  persistCrystallizeOrder
-} = require('./_utils/_crystallize-order-handler');
-=======
-const config = require('../../config');
-const vippsApiCall = require('../../utils/vipps-utils.js');
-const normallizer = require('../../utils/normalizers/vipps');
+const config = require('../../../config');
+const vippsApiCall = require('./utils/vipps-utils.js');
+const normallizer = require('./utils/normalizers/vipps');
 const {
   persistCrystallizeOrder
 } = require('../../../lib/crystallize-order-handler');
->>>>>>> d5e8465c32d297ce2f5f8a84cf831c8c3d3484cd
 
 const { VIPPS_MERCHANT_SERIAL, NGROK_URL } = config;
 
@@ -44,11 +35,7 @@ const orderToVippsBody = (
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
       callbackPrefix: `${NGROK_URL}/api/order-persistence/vipps`,
-<<<<<<< HEAD
-      //   shippingDetailsPrefix: NGROK_URL,
-=======
          shippingDetailsPrefix: NGROK_URL,
->>>>>>> d5e8465c32d297ce2f5f8a84cf831c8c3d3484cd
       consentRemovalPrefix: NGROK_URL,
       paymentType: 'eComm Express Payment',
       fallBack: NGROK_URL,
