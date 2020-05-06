@@ -1,7 +1,7 @@
 const {
 
     vippsNormalizer
-  } = require('./utils/normalizers');
+  } = require('./normalizers/vipps');
   
   const orderQueryNormalizer = async (
     orderData,

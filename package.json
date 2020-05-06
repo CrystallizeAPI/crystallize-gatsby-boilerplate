@@ -80,7 +80,7 @@
     ],
     "license": "MIT",
     "scripts": {
-        "build": "gatsby build && yarn build:server",
+        "build": "gatsby build",
         "develop": "gatsby develop",
         "start": "concurrently 'npm run develop' 'yarn start:server'",
         "serve": "gatsby serve",

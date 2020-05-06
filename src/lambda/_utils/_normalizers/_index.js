@@ -1,9 +1,5 @@
-const stripeNormalizer = require('./stripe');
-const klarnaNormalizer = require('./klarna');
-const vippsNormalizer = require('./vipps');
+const vippsNormalizer = require('./_vipps');
 
 module.exports = {
-  stripeNormalizer,
-  klarnaNormalizer,
   vippsNormalizer
 };

@@ -1,4 +1,4 @@
-const componentContents = require('./component-contents');
+const componentContents = require('./_component-contents');
 
 module.exports = `
   fragment item on Item {

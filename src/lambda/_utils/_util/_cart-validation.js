@@ -1,5 +1,5 @@
 const { request } = require('graphql-request');
-const { GRAPH_URL } = require('../../config');
+const { GRAPH_URL } = require('../../../../.env');
 
 const validateItems = lineItems =>
   new Promise(async (resolve, reject) => {

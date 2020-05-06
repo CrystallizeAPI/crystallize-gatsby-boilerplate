@@ -1,6 +1,6 @@
-import { persistCrystallizeOrder } from 'lib/crystallize-order-handler';
-import { orderQueryNormalizer } from 'lib/order-normalizer';
-import { emailOrderConfirmation } from 'lib/emails';
+import { persistCrystallizeOrder } from './_utils/_crystallize-order-handler';
+import { orderQueryNormalizer } from './_utils/_order-normalizer';
+// import { emailOrderConfirmation } from './_utils/_emails';
 
 
 // TODO: Remove body parsing once zeit has updated error handling

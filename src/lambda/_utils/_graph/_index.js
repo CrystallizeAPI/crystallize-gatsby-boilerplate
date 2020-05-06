@@ -1,7 +1,7 @@
 const { useQuery } = require('urql');
 
-const QUERY_ORDER_BY_ID = require('./queries/order-by-id');
-const CREATE_ORDER = require('./mutations/create-order');
+const QUERY_ORDER_BY_ID = require('./_queries/_order-by-id');
+const CREATE_ORDER = require('./_mutations/_create-order');
 
 /**
  * Helper for getting a catalogue item with a path

@@ -1,13 +1,13 @@
-import mjml2html from '@nerdenough/mjml-ncc-bundle';
-import sgMail from '@sendgrid/mail';
+//import mjml2html from '@nerdenough/mjml-ncc-bundle';
+//import sgMail from '@sendgrid/mail';
 import { print } from 'graphql/language/printer';
 import { request } from 'graphql-request';
 
-import QUERY_ORDER_BY_ID from 'lib/graph/queries/order-by-id';
-import { ORDER_API_URL, SENDGRID_API_KEY } from '../../config';
+import QUERY_ORDER_BY_ID from '../_graph/_queries/_order-by-id';
+import { ORDER_API_URL, SENDGRID_API_KEY } from '../../../../.env';
 
 const formatCurrency = ({ amount, currency }) =>
-  new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(
+  new Intl.NumberFormat('nb-NO', { style: 'currency', currency }).format(
     amount
   );
 
@@ -78,8 +78,8 @@ module.exports = async orderId => {
       sgMail.setApiKey(SENDGRID_API_KEY);
       await sgMail.send({
         to: email,
-        from: 'example@crystallize.com',
-        subject: 'Order Summary',
+        from: 'bjorn@ornforlag.no',
+        subject: 'Bestillings kvitering | Ørn Forlag',
         html
       });
     }
