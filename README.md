@@ -17,6 +17,9 @@
 <p align="center">
 
 </p>
+<p align="center">
+<img alt="lighthouse src="https://github.com/webmaeistro/gatsby-theme-crystallize/rapport/perfect-lighthouse-ornforlag-crystallize.png" width="60" />
+</p>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/020d494c-4101-4dfe-9705-7e87c95856b6/deploy-status)](https://app.netlify.com/sites/ornforlag-crystallize-gatsby/deploys)
 
