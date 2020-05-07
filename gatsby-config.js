@@ -72,7 +72,7 @@ module.exports = {
                 start_url: `/`,
                 icon: `src/images/crystallize-icon.png`,
                 background_color: `#f3f4f6`,
-                theme_color: `#B7E2E4`,
+                theme_color: `#305363`,
                 display: `minimal-ui`,
             },
         },
