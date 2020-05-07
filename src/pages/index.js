@@ -9,6 +9,10 @@ import { H1, Outer, Header } from "ui"
 
 const StyledGrid = styled(Grid)`
   grid-gap: 1rem;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr !important;
+  }
 `
 
 export default function IndexPage({ data }) {
