@@ -37,18 +37,20 @@
         "normalize.css": "^8.0.0",
         "polished": "^3.4.2",
         "prop-types": "^15.7.2",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "react": "0.0.0-experimental-5faf377df",
+        "react-dom": "0.0.0-experimental-5faf377df",
         "react-head": "^3.3.0",
         "react-helmet": "^5.2.1",
         "react-intl": "^4.5.1",
         "react-is": "^16.13.1",
+        "react-scripts": "^3.0.1",
         "react-test-renderer": "^16.13.1",
         "request-promise": "^4.2.5",
         "save": "^2.4.0",
+        "save-dev": "^0.0.1-security",
         "styled-components": "^4.1.3",
         "styled-is": "^1.3.0",
-        "typescript": "^3.8.3",
+        "typescript": "3.3.3",
         "video.js": "^7.7.5"
     },
     "devDependencies": {
@@ -81,7 +83,7 @@
     ],
     "license": "MIT",
     "scripts": {
-        "build": "gatsby build && yarn build:server",
+        "build": "gatsby build",
         "develop": "gatsby develop",
         "start": "concurrently 'gatsby build' 'yarn run build:server'",
         "serve": "gatsby serve",
@@ -96,7 +98,7 @@
         "start:server": "netlify-lambda serve src/lambda -c webpack.server.js",
         "build:server": "netlify-lambda build src/lambda",
         "postinstall": "netlify-lambda install"
-        },
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/webmaeistro/gatsby-theme-crystallize"
