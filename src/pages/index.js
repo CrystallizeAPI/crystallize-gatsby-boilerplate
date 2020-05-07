@@ -31,7 +31,7 @@ export default function IndexPage({ data }) {
         <p>
         {" "}
         <center>
-        <img src="/icons/icon-384x384.png"></img>
+        <img src="/icons/icon-256x256.png" alt="ornforlag logo"></img>
         
      </center> </p>
 
