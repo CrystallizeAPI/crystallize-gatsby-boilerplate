@@ -133,5 +133,5 @@ export const ContentLine = styled.div`
 `
 
 export const Price = styled.span`
-  color: ${colors.price};
+  color: #1a4445;
 `
