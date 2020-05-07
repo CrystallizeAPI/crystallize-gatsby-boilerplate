@@ -48,7 +48,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-react-helmet-canonical-urls`,
             options: {
-              siteUrl: `https://crystallize-gatsby-ornforlag.netlify.app`,
+              siteUrl: `https://ornforlag-crystallize-vipps.now.sh/`,
             },
         },
         {
