@@ -50,17 +50,7 @@ module.exports = {
             options: {
               siteUrl: `https://ornforlag-crystallize-vipps.now.sh/`,
             },
-        },
-        {
-            resolve: "gatsby-plugin-web-font-loader",
-            options: {
-              custom: {
-                families: ["Eina, Eina-SemiBold"],
-                urls: ["/fonts/fonts.css"]
-              }
-            }
-        },
-        
+        },     
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
