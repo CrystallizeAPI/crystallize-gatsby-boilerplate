@@ -5,7 +5,8 @@ import styled from "styled-components"
 import Layout from "components/layout"
 import Product from "components/category-item"
 
-import { H1, Outer, Header } from "ui"
+import { H1, Outer, Header, IconLogo } from "ui"
+
 
 const StyledGrid = styled(Grid)`
   grid-gap: 1rem; 
@@ -27,10 +28,16 @@ export default function IndexPage({ data }) {
     <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
       <Outer>
         <Header>
-          <H1> Test </H1>
+          <H1> Ørn Forlag </H1>
           {" "}
           <p>
-            {" "}
+           {" "}
+           <center>
+            
+            <img src="{IconLogo}"></img>
+       
+        </center> </p>
+           <p>
             Ørn forlag brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
           </p>{" "}
         </Header>{" "}
