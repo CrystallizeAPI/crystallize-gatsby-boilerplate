@@ -34,7 +34,7 @@ export default function IndexPage({ data }) {
            {" "}
            <center>
             
-            <img src="{IconLogo}"></img>
+            <img src="/icons/icon-384x384.png"></img>
        
         </center> </p>
            <p>
