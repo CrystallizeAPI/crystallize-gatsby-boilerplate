@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const config = require('/../.env');
+const config = require('./config');
 const vippsApiCall = require('./_utils/vipps-utils');
 const normallizer = require('./normalizer/vipps');
 const {
@@ -34,7 +34,7 @@ const orderToVippsBody = (
   return {
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
-      callbackPrefix: `${NGROK_URL}/api/order-persistence/vipps`,
+      callbackPrefix: `${NGROK_URL}/api/order-persistence/`,
       //   shippingDetailsPrefix: NGROK_URL,
       consentRemovalPrefix: NGROK_URL,
       paymentType: 'eComm Express Payment',

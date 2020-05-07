@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Layout from 'components/layout';
 
-
+import OrderItems from 'components/order-items';
 import { H1, H3, Outer, Header, colors } from 'ui';
 
 import BillingDetails from './billing-details';

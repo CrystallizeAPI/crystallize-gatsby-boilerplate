@@ -4,7 +4,7 @@ const {
   VIPPS_PASSWORD,
   VIPPS_API_URL,
  
-} = require('../../.env');
+} = require('../config');
 
 const createAuthKey = () =>
   Buffer.from(`${VIPPS_USERNAME}:${VIPPS_PASSWORD}`).toString('base64');

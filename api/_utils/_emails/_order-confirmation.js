@@ -4,7 +4,7 @@ import { print } from 'graphql/language/printer';
 import { request } from 'graphql-request';
 
 import QUERY_ORDER_BY_ID from '../_graph/_queries/_order-by-id';
-import { ORDER_API_URL, SENDGRID_API_KEY } from '../../../../.env';
+import { ORDER_API_URL, SENDGRID_API_KEY } from '../../.env';
 
 const formatCurrency = ({ amount, currency }) =>
   new Intl.NumberFormat('nb-NO', { style: 'currency', currency }).format(
