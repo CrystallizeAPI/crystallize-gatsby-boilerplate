@@ -28,17 +28,18 @@ export default function IndexPage({ data }) {
     <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
       <Outer>
         <Header>
-          <H1> Ørn Forlag </H1>
+        <p>
+        {" "}
+        <center>
+        <img src="/icons/icon-384x384.png"></img>
+        
+     </center> </p>
+
+          <H1>Ørn forlag </H1>
           {" "}
-          <p>
-           {" "}
-           <center>
-            
-            <img src="/icons/icon-384x384.png"></img>
-       
-        </center> </p>
+ 
            <p>
-            Ørn forlag brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
+             brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
           </p>{" "}
         </Header>{" "}
         {grid && (
