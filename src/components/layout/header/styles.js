@@ -5,12 +5,12 @@ import { responsive } from "ui"
 
 export const Outer = styled.header`
   text-align: center;
-  padding: 10px 75px;
+  padding: 10px 25px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   max-width: 1500px;
-  margin: 0 auto 50px;
+  margin: 0 auto 10px;
   ${responsive.xs} {
     flex-direction: column;
   }

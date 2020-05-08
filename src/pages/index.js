@@ -4,7 +4,7 @@ import Grid from "@crystallize/grid-renderer/react"
 import styled from "styled-components"
 import Layout from "components/layout"
 import Product from "components/category-item"
-import { Outer, Header, IconBlack } from "ui"
+import { Outer, Header } from "ui"
 
 const StyledGrid = styled(Grid)`
   grid-gap: 1rem;
@@ -24,26 +24,19 @@ export default function IndexPage({ data }) {
 
   return (
     <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
-      <Outer>
-        <Header>
-          <p>
-            {" "}
-            <center>
-              <IconBlack alt="Ørn forlag" />
-            </center>
-          </p>{" "}
-          <p>
-            Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
-            og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
-            medier.{" "}
-          </p>{" "}
-        </Header>{" "}
-        {grid && (
+      <Outer>{" "}
+           <center>        <div>Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
+           og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
+           medier.    </div>
+                </center>       
+
+         {grid && (
           <StyledGrid
             model={grid}
             cellComponent={({ cell }) => <Product data={cell.item} />}
           />
         )}{" "}
+  
       </Outer>{" "}
     </Layout>
   )
