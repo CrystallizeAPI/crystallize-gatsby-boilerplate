@@ -6,7 +6,7 @@ import { responsive } from './responsive';
 export const H1 = styled.h1`
   padding: 0 0 15px;
   font-size: 4rem;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: ${colors.frostbite};
 
   ${responsive.smAndLess} {

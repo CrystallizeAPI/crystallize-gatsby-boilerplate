@@ -4,8 +4,7 @@ import Grid from "@crystallize/grid-renderer/react"
 import styled from "styled-components"
 import Layout from "components/layout"
 import Product from "components/category-item"
-
-import { H1, Outer, Header, IconLogo } from "ui"
+import { Outer, Header, } from "ui"
 
 
 const StyledGrid = styled(Grid)`
@@ -31,15 +30,12 @@ export default function IndexPage({ data }) {
         <p>
         {" "}
         <center>
-        <img src="/icons/icon-256x256.png" alt="ornforlag logo"></img>
-        
-     </center> </p>
-
-          <H1>Ørn forlag </H1>
+        <img src="/icons/logo.svg" alt="Ørn forlag" /><h1>Ørn forlag</h1>
+        </center>
+                   </p>        
           {" "}
- 
-           <p>
-             brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
+            <p>
+           Brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
           </p>{" "}
         </Header>{" "}
         {grid && (

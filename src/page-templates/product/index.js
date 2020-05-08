@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import Img from "@crystallize/react-image"
 import isEqual from "lodash/isEqual"
 import { graphql } from "gatsby"
-
-import { H1, H2, Button, screen, Outer } from "ui"
+//Button
+import { H1, H2, screen, Outer } from "ui"
 import CategoryItem from "components/category-item"
 import { CurrencyValue } from "components/currency-value"
 import VariantSelector from "components/variant-selector"
@@ -44,10 +44,10 @@ const ProductPage = ({ product, defaultVariant }) => {
 
   const onVariantChange = variant => setSelectedVariant(variant)
 
-  const buy = async () => {
-    console.log("todo: buy")
+ /* const order = async () => {
+    console.log("todo: order")
   }
-
+*/
   const summaryComponent = product.components.find(c => c.name === "Summary")
   const description = product.components.find(c => c.name === "Description")
   const { topics } = product
@@ -94,7 +94,7 @@ const ProductPage = ({ product, defaultVariant }) => {
                 <CurrencyValue value={selectedVariant.price} />
               </strong>
             </Price>
-            <Button onClick={buy}>Legg til handlekurv</Button>
+            {/* <Button onClick={order}>Bestill nå</Button> */}
           </ProductFooter>
         </Info>
       </Sections>
@@ -105,7 +105,7 @@ const ProductPage = ({ product, defaultVariant }) => {
 
       {topics && topics.length && (
         <RelatedTopics>
-          <H2>Related</H2>
+          <H2>Kanskje du også liker</H2>
 
           {topics.map(topic => {
             // We only want to show the first 4 products for a topic
@@ -144,7 +144,7 @@ const ProductPageDataLoader = ({ data: { crystallize } }) => {
 
   if (!defaultVariant) {
     return (
-      <Layout headerItems={headerItems}>This product has no variants</Layout>
+      <Layout headerItems={headerItems}>Finnes ingen varianter</Layout>
     )
   }
 

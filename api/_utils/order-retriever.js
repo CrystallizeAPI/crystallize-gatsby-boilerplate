@@ -1,5 +1,5 @@
-const klarnaApiCall = require('./util/klarna-utils');
-const { fetchCrystallizeOrder } = require('./_crystallize-order-handler');
+
+const { fetchCrystallizeOrder } = require('./crystallize-order-handler');
 // eslint-disable-next-line consistent-return
 async function orderRetriever(
   paymentMethod,
@@ -8,15 +8,7 @@ async function orderRetriever(
 ) {
   try {
     switch (paymentMethod) {
-      case 'klarna':
-        return klarnaApiCall({
-          uri: `/ordermanagement/v1/orders/${orderId}`,
-          method: 'GET'
-        });
-      case 'stripe':
-        // TODO: implement 3D secure callbacks from Stripe
-        break;
-      default:
+        default:
         if (isCrystallizeRequest) return fetchCrystallizeOrder(orderId);
 
         throw new Error(

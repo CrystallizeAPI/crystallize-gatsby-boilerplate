@@ -1,5 +1,5 @@
-import { persistCrystallizeOrder } from '../_utils/_crystallize-order-handler';
-import { orderQueryNormalizer } from '../_utils/_order-normalizer';
+import { persistCrystallizeOrder } from '../_utils/crystallize-order-handler';
+import { orderQueryNormalizer } from '../_utils/order-normalizer';
 //import { emailOrderConfirmation } from 'utils/emails';
 
 
