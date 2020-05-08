@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        title: `gatsby-theme-crystallize`,
-        description: `Headless ecommerce running on Crystallize and Gatsby with hopefully vipps express soon`,
+        title: `Ørn forlag | Utgiver av bøker`,
+        description: `Ørn forlag brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.`,
         author: `@webmaeistro`,
     },
     plugins: [
@@ -48,7 +48,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-react-helmet-canonical-urls`,
             options: {
-              siteUrl: `https://ornforlag-crystallize-vipps.now.sh/`,
+              siteUrl: `https://ornforlag.no`,
             },
         },     
         `gatsby-transformer-sharp`,
@@ -67,10 +67,10 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby-theme-crystallize`,
-                short_name: `crystallizeEcomm`,
+                name: `Ørn forlag | Utgiver av bøker `,
+                short_name: `ornforlag.no`,
                 start_url: `/`,
-                icon: `src/images/crystallize-icon.png`,
+                icon: `src/images/ornforlag-icon.png`,
                 background_color: `#f3f4f6`,
                 theme_color: `#305363`,
                 display: `minimal-ui`,
