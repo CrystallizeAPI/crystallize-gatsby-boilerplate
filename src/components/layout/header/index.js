@@ -7,7 +7,7 @@ import { Outer, Nav, Logo, NavList, NavListItem } from "./styles"
 const Header = ({ headerItems }) => {
   return (
     <Outer>
-      <Link to="/" alt="hjem">
+      <Link to="/">
         <Logo>
             <IconLogo alt="Ørn forlag hjem" /> 
         </Logo>

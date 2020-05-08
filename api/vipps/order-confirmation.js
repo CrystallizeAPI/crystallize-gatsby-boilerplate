@@ -3,8 +3,8 @@
 import { print } from 'graphql/language/printer';
 import { request } from 'graphql-request';
 
-import QUERY_ORDER_BY_ID from '../_graph/_queries/_order-by-id';
-import { ORDER_API_URL, SENDGRID_API_KEY } from '../../config';
+import QUERY_ORDER_BY_ID from '../_utils/graph/queries/order-by-id.js';
+import { ORDER_API_URL, SENDGRID_API_KEY } from '../../config.js';
 
 const formatCurrency = ({ amount, currency }) =>
   new Intl.NumberFormat('nb-NO', { style: 'currency', currency }).format(

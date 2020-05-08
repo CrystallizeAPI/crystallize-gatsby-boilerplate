@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const config = require('../../config');
+const config = require('../../config.js');
 const vippsApiCall = require('../_utils/vipps-utils');
 const normallizer = require('../normalizer/vipps');
 const {
