@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
-// import { IconLogo } from "ui"
+import { IconLogo } from "ui"
 
 import { Outer, Nav, Logo, NavList, NavListItem } from "./styles"
 
@@ -10,7 +9,7 @@ const Header = ({ headerItems }) => {
     <Outer>
       <Link to="/">
         <Logo>
-           <img src="/icons/logo.svg" alt="Ørn forlag" width="45" height="45" />
+            <IconLogo />
         </Logo>
       </Link>
       <Nav>
