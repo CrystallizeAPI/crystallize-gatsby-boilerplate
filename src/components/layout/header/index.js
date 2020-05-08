@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { IconLogo } from "ui"
 
 import { Outer, Nav, Logo, NavList, NavListItem } from "./styles"
+import BurgerButton from "./burger-button"
 
 const Header = ({ headerItems }) => {
+  const [navOpen, setNavOpen] = useState(false)
+
   return (
     <Outer>
       <Link to="/">
@@ -12,7 +15,7 @@ const Header = ({ headerItems }) => {
             <IconLogo alt="Ørn forlag hjem" /> 
         </Logo>
       </Link>
-      <Nav>
+      <Nav open={navOpen}>
         <NavList>
           {headerItems?.map(headerItem => (
             <NavListItem key={headerItem.path}>
@@ -21,6 +24,7 @@ const Header = ({ headerItems }) => {
           ))}
         </NavList>
       </Nav>
+      <BurgerButton active={navOpen} onClick={() => setNavOpen(!navOpen)} />
     </Outer>
   )
 }
