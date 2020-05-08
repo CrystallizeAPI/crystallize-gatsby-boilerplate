@@ -18,10 +18,10 @@ const Layout = ({ headerItems, children, title }) => {
       <footer style={{ margin: "2rem 0" }}>
         <Outer>
           Nettside av: {` `}{" "}
-          <a href="https://martin-andersen.now.sh"> Martin Andersen </a>{" "}
+          <a href="https://martin-andersen.netlify.app"> Martin Andersen </a>{" "}
           {` `} | Laget med {` `}{" "}
-          <a href="https://www.gatsbyjs.org"> Gatsby </a> og{" "}
-          <a href="https:/ / www.crystallize.com ">Crystallize</a>{" "}
+          <a href="https://www.gatsbyjs.org"> Gatsbyjs </a> og{" "}
+          <a href="https://www.crystallize.com ">Crystallize</a>{" "}
         </Outer>{" "}
       </footer>{" "}
     </IntlProvider>

@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-const config = require('../../.env');
-const vippsApiCall = require('./_utils/.vipps-utils');
-const normallizer = require('./normalizer/vipps');
+const config = require('../../../config');
+const vippsApiCall = require('../../../utils/vipps-utils.js');
+const normallizer = require('../normalizer/vipps');
 const {
   persistCrystallizeOrder
-} = require('./_utils/_crystallize-order-handler');
+} = require('../../../utils/crystallize-order-handler');
 
 const { VIPPS_MERCHANT_SERIAL, NGROK_URL } = config;
 
@@ -34,8 +34,8 @@ const orderToVippsBody = (
   return {
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
-      callbackPrefix: `${NGROK_URL}/.netlify/lamda/order-persistence/vipps`,
-      //   shippingDetailsPrefix: NGROK_URL,
+      callbackPrefix: `${NGROK_URL}/.netlify/lamda/_order-persistence/vipps`,
+         shippingDetailsPrefix: NGROK_URL,
       consentRemovalPrefix: NGROK_URL,
       paymentType: 'eComm Express Payment',
       fallBack: NGROK_URL,
@@ -52,7 +52,7 @@ const orderToVippsBody = (
         {
           isDefault: 'Y',
           priority: 0,
-          shippingCost: 0,
+          shippingCost: 50,
           shippingMethod: 'Posten-servicepakke',
           shippingMethodId: 'free'
         }

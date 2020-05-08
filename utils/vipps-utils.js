@@ -5,7 +5,7 @@ const {
   VIPPS_API_URL,
   VIPPS_MERCHANT_SERIAL,
   NGROK_URL
-} = require('..//.env');
+} = require('../config');
 
 const createAuthKey = () =>
   Buffer.from(`${VIPPS_USERNAME}:${VIPPS_PASSWORD}`).toString('base64');

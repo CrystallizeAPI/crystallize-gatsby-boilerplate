@@ -28,7 +28,7 @@ class StripeWrapper extends React.Component {
       product_tax_amount: item.vatAmount
     }));
 
-    const response = await fetch('/api/vipps/initiate-payment', {
+    const response = await fetch('/.netlify/lamda/vipps/initiate-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
