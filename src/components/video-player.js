@@ -31,11 +31,11 @@ export default function VideoPlayer({
 
   const sources =
     playlists
-      ?.map(playlist => ({
+      ?.map((playlist) => ({
         type: getVideoType(playlist),
         src: playlist,
       }))
-      .sort(s => (HLS_EXTENSION.test(s.src) ? -1 : 1)) || []
+      .sort((s) => (HLS_EXTENSION.test(s.src) ? -1 : 1)) || []
 
   useEffect(() => {
     if (el.current) {

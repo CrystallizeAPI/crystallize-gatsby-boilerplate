@@ -27,7 +27,7 @@ class CategoryItem extends React.Component {
     const { name, path, type, variants } = data
 
     if (type === "folder" || type === "document") {
-      const images = data.components.find(c => c.type === "images")
+      const images = data.components.find((c) => c.type === "images")
       const image = images && images.content ? images.content.images[0] : null
       return (
         <Outer type={type} to={path}>
@@ -51,7 +51,7 @@ class CategoryItem extends React.Component {
     }
 
     const { price, image } = variants
-      ? variants.find(variant => variant.isDefault)
+      ? variants.find((variant) => variant.isDefault)
       : {}
 
     return (

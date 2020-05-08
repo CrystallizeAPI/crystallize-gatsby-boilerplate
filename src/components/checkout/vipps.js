@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react"
 
 class StripeWrapper extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       error: null,
-      loading: false
-    };
+      loading: false,
+    }
   }
 
   async componentDidMount() {
-    this.setState({ loading: true });
+    this.setState({ loading: true })
 
-    const { personalDetails, items, currency } = this.props;
+    const { personalDetails, items, currency } = this.props
 
-    const lineItems = items.map(item => ({
+    const lineItems = items.map((item) => ({
       name: item.name,
       sku: item.sku,
       net: item.price,
@@ -25,38 +25,38 @@ class StripeWrapper extends React.Component {
       image_url: item.image.url,
       subscription: item.subscription,
       tax_group: item.taxGroup,
-      product_tax_amount: item.vatAmount
-    }));
+      product_tax_amount: item.vatAmount,
+    }))
 
-    const response = await fetch('/.netlify/lamda/vipps/initiate-payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch("/.netlify/lamda/vipps/initiate-payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         personalDetails,
         currency,
-        lineItems
-      })
-    }).then(res => res.json());
+        lineItems,
+      }),
+    }).then((res) => res.json())
 
-    this.setState({ loading: false });
+    this.setState({ loading: false })
 
     // handle response
-    console.log(response);
+    console.log(response)
   }
 
   render() {
-    const { loading, error } = this.state;
+    const { loading, error } = this.state
 
     if (loading) {
-      return <p>Loading...</p>;
+      return <p>Loading...</p>
     }
 
     if (error) {
-      return <p>Unable to initialise Vipps payment!</p>;
+      return <p>Unable to initialise Vipps payment!</p>
     }
 
-    return <div id="vipps-checkout-container" />;
+    return <div id="vipps-checkout-container" />
   }
 }
 
-export default StripeWrapper;
+export default StripeWrapper

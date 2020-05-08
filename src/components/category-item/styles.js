@@ -118,7 +118,7 @@ export const ContentLine = styled.div`
   display: flex;
   padding: 15px;
   margin: 8px;
-  flex-direction: ${p => (p.right ? "row-reverse" : "row")};
+  flex-direction: ${(p) => (p.right ? "row-reverse" : "row")};
   justify-content: space-between;
   align-items: stretch;
   text-overflow: ellipsis;

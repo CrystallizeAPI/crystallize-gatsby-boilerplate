@@ -1,12 +1,11 @@
-
 const orderDataDenormalizer = (paymentMethod, orderData) => {
   switch (paymentMethod) {
-      case 'vipps':
-      break;
+    case "vipps":
+      break
     default:
-      break;
+      break
   }
-  return orderData;
-};
+  return orderData
+}
 
-module.exports = { orderDataDenormalizer };
+module.exports = { orderDataDenormalizer }

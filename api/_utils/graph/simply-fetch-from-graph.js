@@ -3,23 +3,23 @@
  * client attached.
  */
 
-if (typeof window === 'undefined') {
+if (typeof window === "undefined") {
   // eslint-disable-next-line global-require
-  require('isomorphic-unfetch');
+  require("isomorphic-unfetch")
 }
 
 module.exports = async function simplyFetchFromGraph({ query, variables }) {
   const response = await fetch(global.__crystallizeConfig.GRAPH_URL, {
-    method: 'post',
+    method: "post",
     headers: {
-      'content-type': 'application/json'
+      "content-type": "application/json",
     },
-    body: JSON.stringify({ query, variables })
-  });
+    body: JSON.stringify({ query, variables }),
+  })
 
   if (!response.ok) {
-    throw new Error(await response.text());
+    throw new Error(await response.text())
   }
 
-  return response.json();
-};
+  return response.json()
+}

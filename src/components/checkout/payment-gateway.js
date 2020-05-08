@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react"
 
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import { responsive, H3 } from 'ui';
+import { responsive, H3 } from "ui"
 
-import VippsCheckout from './vipps';
+import VippsCheckout from "./vipps"
 
 import {
   Form,
@@ -14,8 +14,8 @@ import {
   PaymentSelector,
   PaymentMethods,
   PaymentButton,
-  PaymentMethod
-} from './styles';
+  PaymentMethod,
+} from "./styles"
 
 const Outer = styled.div`
   width: 50%;
@@ -25,11 +25,11 @@ const Outer = styled.div`
   ${responsive.xs} {
     width: 100%;
   }
-`;
+`
 const Row = styled.div`
   display: flex;
   margin-bottom: 10px;
-`;
+`
 
 const Inner = styled.div`
   display: flex;
@@ -39,30 +39,30 @@ const Inner = styled.div`
   justify-content: center;
   font-size: 1.5rem;
   border-radius: 0.2rem;
-`;
+`
 const SectionHeader = styled(H3)`
   font-size: 14px;
   font-weight: 600;
-`;
+`
 class PaymentGateway extends React.Component {
   state = {
     paymentMethod: null,
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: ''
-  };
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+  }
 
   render() {
-    const { items, currency } = this.props;
-    const { paymentMethod, firstName, lastName, email, phone } = this.state;
+    const { items, currency } = this.props
+    const { paymentMethod, firstName, lastName, email, phone } = this.state
 
     const personalDetails = {
       firstName,
       lastName,
       email,
-      phone
-    };
+      phone,
+    }
 
     return (
       <Outer>
@@ -77,7 +77,7 @@ class PaymentGateway extends React.Component {
                   type="text"
                   placeholder="First name"
                   value={firstName}
-                  onChange={e => this.setState({ firstName: e.target.value })}
+                  onChange={(e) => this.setState({ firstName: e.target.value })}
                   required
                 />
               </InputGroup>
@@ -88,7 +88,7 @@ class PaymentGateway extends React.Component {
                   type="text"
                   placeholder="Last name"
                   value={lastName}
-                  onChange={e => this.setState({ lastName: e.target.value })}
+                  onChange={(e) => this.setState({ lastName: e.target.value })}
                   required
                 />
               </InputGroup>
@@ -101,7 +101,7 @@ class PaymentGateway extends React.Component {
                   type="email"
                   placeholder="Email address"
                   value={email}
-                  onChange={e => this.setState({ email: e.target.value })}
+                  onChange={(e) => this.setState({ email: e.target.value })}
                   required
                 />
               </InputGroup>
@@ -114,7 +114,7 @@ class PaymentGateway extends React.Component {
                   type="phone"
                   placeholder="Personal number"
                   value={phone}
-                  onChange={e => this.setState({ phone: e.target.value })}
+                  onChange={(e) => this.setState({ phone: e.target.value })}
                   required
                 />
               </InputGroup>
@@ -123,19 +123,17 @@ class PaymentGateway extends React.Component {
             <SectionHeader>Choose payment method</SectionHeader>
             <PaymentMethods>
               <PaymentSelector>
-                
                 <PaymentButton
                   color="#FFFFFF"
                   type="button"
-                  active={paymentMethod === 'vipps'}
-                  onClick={() => this.setState({ paymentMethod: 'vipps' })}
+                  active={paymentMethod === "vipps"}
+                  onClick={() => this.setState({ paymentMethod: "vipps" })}
                 >
                   <img src="/static/vipps-logo.png" alt="Vipps logo" />
                 </PaymentButton>
               </PaymentSelector>
-             
               )}
-              {paymentMethod === 'vipps' && (
+              {paymentMethod === "vipps" && (
                 <PaymentMethod>
                   <VippsCheckout
                     personalDetails={personalDetails}
@@ -144,14 +142,13 @@ class PaymentGateway extends React.Component {
                   />
                 </PaymentMethod>
               )}
-            
               )}
             </PaymentMethods>
           </Form>
         </Inner>
       </Outer>
-    );
+    )
   }
 }
 
-export default PaymentGateway;
+export default PaymentGateway

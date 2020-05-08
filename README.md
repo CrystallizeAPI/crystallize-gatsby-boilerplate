@@ -1,4 +1,5 @@
-# Gatsby-theme-Crystallize 
+# Gatsby-theme-Crystallize
+
 <p align="center">
   <a href="https://gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
@@ -25,23 +26,20 @@
 
 Original repo: https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate
 
--added keywords to capture gatsbyjs telemetry 
+-added keywords to capture gatsbyjs telemetry
 -published to npmjs.
--Gatsbyjs-ified nameing convention: ~crystallize-gatsby-boilerplate~ to gatsby-theme-crystallize 
--published to npmjs as a gatsby-theme 
+-Gatsbyjs-ified nameing convention: ~crystallize-gatsby-boilerplate~ to gatsby-theme-crystallize
+-published to npmjs as a gatsby-theme
 
 [![Edit gatsby-starter-crystyallize](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/webmaeistro/gatsby-theme-crystallize/tree/master/?fontsize=14&hidenavigation=1&module=%2Fpackage.json&moduleview=1&theme=dark&view=preview)
 
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/webmaeistro/gatsby-theme-crystallize.git)
-
-
-
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/webmaeistro/gatsby-theme-crystallize.git)
 
 The theme you need to get a frontend up and running on the
 [headless ecommerce][8] & GraphQL based [product Information Management][9]
 service [Crystallize][10]. [React/graphql commerce with Gatsby][11].
 
-This  crystallize.com theme is a great starting point when building [React
+This crystallize.com theme is a great starting point when building [React
 ecommerce][11] experiences with [frontend performance][12] in focus. You can
 have rich ecommerce content with the super structured [PIM][13] engine in
 Crystallize powering your product catalogue.
@@ -57,41 +55,40 @@ Check it out, the starter and theme is Open Source and MIT licensed.
 
 ## 🚀 Quick start
 
-  1.  **Setup this site.**
+1.  **Setup this site.**
 
-      Use the Gatsby CLI to Clone this site.
+    Use the Gatsby CLI to Clone this site.
 
-      ```sh
-      # Clone this Repositories
-      gatsby new crystallize-project https://github.com/webmaeistro/gatsby-theme-crystallize.git
-      ```
+    ```sh
+    # Clone this Repositories
+    gatsby new crystallize-project https://github.com/webmaeistro/gatsby-theme-crystallize.git
+    ```
 
-  2.  **Setup your API Dash**
+2.  **Setup your API Dash**
 
-     goto crystallize.com register a user (its free up to a sertan point see pricing) and goto security tab and copy your tenant name
-example:
-      ```
-      tenant=your-tenant
-      ```
+         goto crystallize.com register a user (its free up to a sertan point see pricing) and goto security tab and copy your tenant name
 
- 3.  **Start developing.**
+    example:
+    `tenant=your-tenant`
 
-      Navigate into your new site’s directory and start it up.
+3.  **Start developing.**
 
-      ```sh
-      cd crystallize-project
-      
-      
-      ```
+    Navigate into your new site’s directory and start it up.
 
-  
-##  two gatsby-specific things to do first 
- 
-### A: 
+    ```sh
+    cd crystallize-project
+
+
+    ```
+
+## two gatsby-specific things to do first
+
+### A:
 
 Open the `crystallize-project` directory in your code editor of choice and make sure you'r `gatsby.config` has the following lines (among others):
 
 file: /gatsby.config:
+
 ```
 {
             resolve: `gatsby-source-graphql`,
@@ -106,7 +103,7 @@ file: /gatsby.config:
         },
 ```
 
-### B: 
+### B:
 
 create a file named `crysallize.config` in the root of your project and copy paste the following lines:
 
@@ -123,19 +120,15 @@ Run the following in the root of your project:
 gatsby develop
 ```
 
-  ## 🎓 Learning Gatsby
+## 🎓 Learning Gatsby
 
-  Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
-  - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-  - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
- 
-
-
-
-### 🎓 crystallize.com 
+### 🎓 crystallize.com
 
 https://crystallize.com/learn/developer-guides
 
@@ -144,6 +137,7 @@ Products are a core part of the **catalogue**.
 
 Sample Product Query:
 graphql:
+
 ```
 query {
   catalogue(language: "en", path: "/cuddly-toys/kevin-the-kiwi") {
@@ -249,12 +243,9 @@ Styled components and UI.
 
 NB! react-framework orientated more then traditional gatsby file struckture
 
+## 💫 Deploy
 
- ## 💫 Deploy
- 
 There are multiple alternatives for deployments, check out one of the ones below:
-
-
 
 ### Deploying with [Vercel Now][19]
 
@@ -262,9 +253,8 @@ There are multiple alternatives for deployments, check out one of the ones below
 - Install Vercel Now: `npm i -g now`
 - Run `now`
 
-
-
 extraction of gatsby-node.js:
+
 ```
  // Map Crystallize shape names to the page templates
   const templates = {
@@ -273,23 +263,29 @@ extraction of gatsby-node.js:
     Folder: path.resolve(`src/page-templates/folder.js`),
   }
 ```
-  
-   * Get items 5 levels deep from Crystallize.
-   * You can get even more levels by quering more children:
-   * children {
-   *   path
-   *   shape {
-   *     name
-   *   }
-   * }
-  
+
+- Get items 5 levels deep from Crystallize.
+- You can get even more levels by quering more children:
+- children {
+- path
+- shape {
+-     name
+- }
+- }
+
 extraction from gatsby-node.js
-  ``` 
-  return graphql(
-    `
-      query loadAllCrystallizeCatalogueItems {
-        crystallize {
-          catalogue(language: "en", path: "/") {
+
+```
+return graphql(
+  `
+    query loadAllCrystallizeCatalogueItems {
+      crystallize {
+        catalogue(language: "en", path: "/") {
+          children {
+            path
+            shape {
+              name
+            }
             children {
               path
               shape {
@@ -310,12 +306,6 @@ extraction from gatsby-node.js
                     shape {
                       name
                     }
-                    children {
-                      path
-                      shape {
-                        name
-                      }
-                    }
                   }
                 }
               }
@@ -323,47 +313,50 @@ extraction from gatsby-node.js
           }
         }
       }
-    `
-  ).then(result => {
-    if (result.errors) {
-      throw result.errors
     }
+  `
+).then(result => {
+  if (result.errors) {
+    throw result.errors
+  }
 
-    // Reduce all items into a single flat array
-    const items = []
-    {
-      ;(function add({ path, shape, children }) {
-        if (path && shape) {
-          // Ensure that we have a template for this shape
-          if (shape.name in templates) {
-            items.push({ path, shape, component: templates[shape.name] })
-          } else {
-            items.push({ path, shape, component: templates.Folder })
-            console.log(
-              `No template was found for shape "${shape.name}". "${path}" is rendered using the Folder template`
-            )
-          }
+  // Reduce all items into a single flat array
+  const items = []
+  {
+    ;(function add({ path, shape, children }) {
+      if (path && shape) {
+        // Ensure that we have a template for this shape
+        if (shape.name in templates) {
+          items.push({ path, shape, component: templates[shape.name] })
+        } else {
+          items.push({ path, shape, component: templates.Folder })
+          console.log(
+            `No template was found for shape "${shape.name}". "${path}" is rendered using the Folder template`
+          )
         }
-        if (children) {
-          children.forEach(add)
-        }
-      })(result.data.crystallize.catalogue)
-    }
+      }
+      if (children) {
+        children.forEach(add)
+      }
+    })(result.data.crystallize.catalogue)
+  }
 ```
-  #### Create pages for each node
-   
+
+#### Create pages for each node
+
           Add optional context data to be inserted
            as props into the page component..
-          
+
            The context data can also be used as
            arguments to the page GraphQL query.
-          
+
            The page "path" is always available as a GraphQL
            argument.
         },
       })
     })
-  })
+
+})
 }
 
 ```
@@ -388,3 +381,4 @@ extraction from gatsby-node.js
 [17]: https://github.com/crystallizeapi/crystallize-cli
 [18]: https://www.netlify.com/
 [19]: https://vercel.com
+```

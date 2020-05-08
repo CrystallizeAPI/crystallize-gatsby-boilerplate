@@ -1,23 +1,22 @@
 const {
-  NODE_ENV = 'development',
-  COUNTRY_CODE = 'NO',
-  CRYSTALLIZE_TENANT_ID = 'orn-forlag',
-  CRYSTALLIZE_API_URL = 'https://api.crystallize.com',
-  CRYSTALLIZE_CORE_API_URL = 'https://pim.crystallize.com/graph/core',
+  NODE_ENV = "development",
+  COUNTRY_CODE = "NO",
+  CRYSTALLIZE_TENANT_ID = "orn-forlag",
+  CRYSTALLIZE_API_URL = "https://api.crystallize.com",
+  CRYSTALLIZE_CORE_API_URL = "https://pim.crystallize.com/graph/core",
   MY_CRYSTALLIZE_SECRET_TOKEN,
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   SENDGRID_API_KEY,
-  TERMS_URI = 'https://ornforlag.no',
-  CHECKOUT_URI = 'https://ornforlag.no/checkout',
+  TERMS_URI = "https://ornforlag.no",
+  CHECKOUT_URI = "https://ornforlag.no/checkout",
 
   NGROK_URL,
 
+  VIPPS_API_URL = "https://testapi.vipps.no",
+  HOST_URL = "http://localhost:3000",
+} = process.env
 
-  VIPPS_API_URL = 'https://testapi.vipps.no',
-  HOST_URL = 'http://localhost:3000'
-} = process.env;
-
-const DEV = NODE_ENV !== 'production';
+const DEV = NODE_ENV !== "production"
 
 global.__crystallizeConfig = {
   NODE_ENV,
@@ -36,7 +35,7 @@ global.__crystallizeConfig = {
 
   NGROK_URL,
   VIPPS_API_URL,
-  HOST_URL
-};
+  HOST_URL,
+}
 
-module.exports = global.__crystallizeConfig;
+module.exports = global.__crystallizeConfig

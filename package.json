@@ -2,8 +2,8 @@
     "name": "gatsby-theme-crystallize",
     "private": false,
     "description": "A simple starter to get up and developing quickly with Crystallize and Gatsby. For blazing fast Ecomm sites!",
-    "version": "0.5.0",
-    "author": "Martin Andersen Håkon Krogh <marander@pm.me> (@webmaeistro @hakonkrogh)",
+    "version": "1.0.0",
+    "author": "Martin Andersen <marander@pm.me> (@webmaeistro @hakonkrogh)",
     "dependencies": {
         "@crystallize/content-transformer": "^5.2.1",
         "@crystallize/grid-renderer": "^2.0.1",
@@ -33,6 +33,7 @@
         "graphql": "^14.0.0",
         "identity-obj-proxy": "^3.0.0",
         "lodash": "^4.17.15",
+        "netlify-cli": "^2.50.0",
         "netlify-lambda": "^1.6.3",
         "normalize.css": "^8.0.0",
         "polished": "^3.4.2",
@@ -85,7 +86,7 @@
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby develop",
-        "start": "concurrently 'gatsby build' 'yarn run build:server'",
+        "start": "concurrently 'gatsby build' 'npm run-script build:server' 'npm run-script postinstall' ",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -94,7 +95,6 @@
         "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
         "cy:run": "cypress run",
         "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-        "test:lambda": "echo \"Error: no test specified\" && exit 1",
         "start:server": "netlify-lambda serve src/lambda -c webpack.server.js",
         "build:server": "netlify-lambda build src/lambda",
         "postinstall": "netlify-lambda install"

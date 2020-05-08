@@ -1,4 +1,4 @@
-const componentContents = require('./component-contents');
+const componentContents = require("./component-contents")
 
 module.exports = `
   fragment item on Item {
@@ -27,4 +27,4 @@ module.exports = `
   }
 
   ${componentContents}
-`;
+`

@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { keyframes } from "styled-components"
 
-const speedSwitch = speed => {
+const speedSwitch = (speed) => {
   if (speed === "fast") return 600
   if (speed === "slow") return 900
   return 750
@@ -18,7 +18,7 @@ const Svg = styled.svg`
   animation-name: ${animation};
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-duration: ${p => speedSwitch(p.speed)}ms;
+  animation-duration: ${(p) => speedSwitch(p.speed)}ms;
 `
 
 export const Spinner = ({

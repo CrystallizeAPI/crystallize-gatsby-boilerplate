@@ -12,12 +12,12 @@ const Header = ({ headerItems }) => {
     <Outer>
       <Link to="/">
         <Logo>
-            <IconLogo alt="Ørn forlag hjem" /> 
+          <IconLogo alt="Ørn forlag hjem" />
         </Logo>
       </Link>
       <Nav open={navOpen}>
         <NavList>
-          {headerItems?.map(headerItem => (
+          {headerItems?.map((headerItem) => (
             <NavListItem key={headerItem.path}>
               <Link to={headerItem.path}>{headerItem.name}</Link>
             </NavListItem>

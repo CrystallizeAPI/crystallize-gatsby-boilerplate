@@ -1,3 +1,3 @@
-const emailOrderConfirmation = require('./_order-confirmation');
+const emailOrderConfirmation = require("./_order-confirmation")
 
-module.exports = { emailOrderConfirmation };
+module.exports = { emailOrderConfirmation }

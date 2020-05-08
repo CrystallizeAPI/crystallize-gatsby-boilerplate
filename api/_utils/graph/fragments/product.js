@@ -36,4 +36,4 @@ fragment product on Product {
     }
   }
 }
-`;
+`

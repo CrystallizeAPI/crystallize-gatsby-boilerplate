@@ -1,4 +1,3 @@
-
 const path = require(`path`)
 
 exports.createPages = ({ graphql, actions }) => {
@@ -60,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors
     }

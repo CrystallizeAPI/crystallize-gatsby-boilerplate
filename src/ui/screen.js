@@ -5,24 +5,24 @@ export const screen = {
   md: 1024,
   lg: 1600,
   get xsMin() {
-    return this.xs;
+    return this.xs
   },
   get xsMax() {
-    return this.sm - 1;
+    return this.sm - 1
   },
   get smMin() {
-    return this.sm;
+    return this.sm
   },
   get smMax() {
-    return this.md - 1;
+    return this.md - 1
   },
   get mdMin() {
-    return this.md;
+    return this.md
   },
   get mdMax() {
-    return this.lg - 1;
+    return this.lg - 1
   },
   get lgMin() {
-    return this.lg;
-  }
-};
+    return this.lg
+  },
+}

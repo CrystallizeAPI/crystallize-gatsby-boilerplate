@@ -65,7 +65,7 @@ export const AttributeButton = styled.button`
   font-weight: bold;
   padding: 0.8rem;
 
-  ${props =>
+  ${(props) =>
     props.selected &&
     css`
       background: ${darken(0.1, colors.prettyPink)};

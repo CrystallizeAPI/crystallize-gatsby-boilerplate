@@ -6,9 +6,8 @@ import Layout from "components/layout"
 import Product from "components/category-item"
 import { Outer, Header, IconBlack } from "ui"
 
-
 const StyledGrid = styled(Grid)`
-  grid-gap: 1rem; 
+  grid-gap: 1rem;
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr !important;
@@ -27,15 +26,16 @@ export default function IndexPage({ data }) {
     <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
       <Outer>
         <Header>
-        <p>
-        {" "}
-        <center>
-        <IconBlack  alt="Ørn forlag" />
-        </center>
-                   </p>        
-          {" "}
-            <p>
-          Ørn forlag brer sine vide vinger over sentrale deler av norsk natur, og bærer kunnskap ut til folket gjennom fysiske såvel som digitale medier.{" "}
+          <p>
+            {" "}
+            <center>
+              <IconBlack alt="Ørn forlag" />
+            </center>
+          </p>{" "}
+          <p>
+            Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
+            og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
+            medier.{" "}
           </p>{" "}
         </Header>{" "}
         {grid && (

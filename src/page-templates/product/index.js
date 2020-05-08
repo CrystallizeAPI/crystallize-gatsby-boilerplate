@@ -34,7 +34,7 @@ const ProductPage = ({ product, defaultVariant }) => {
     const newAttributes = attributesToObject(attributes)
     newAttributes[newAttribute.attribute] = newAttribute.value
 
-    const newSelectedVariant = product.variants.find(variant => {
+    const newSelectedVariant = product.variants.find((variant) => {
       const variantAttributes = attributesToObject(variant.attributes)
       return isEqual(variantAttributes, newAttributes)
     })
@@ -42,14 +42,14 @@ const ProductPage = ({ product, defaultVariant }) => {
     setSelectedVariant(newSelectedVariant)
   }
 
-  const onVariantChange = variant => setSelectedVariant(variant)
+  const onVariantChange = (variant) => setSelectedVariant(variant)
 
- /* const order = async () => {
+  /* const order = async () => {
     console.log("todo: order")
   }
 */
-  const summaryComponent = product.components.find(c => c.name === "Summary")
-  const description = product.components.find(c => c.name === "Description")
+  const summaryComponent = product.components.find((c) => c.name === "Summary")
+  const description = product.components.find((c) => c.name === "Description")
   const { topics } = product
 
   const selectedVariantImg = (selectedVariant.image || {}).url
@@ -62,7 +62,7 @@ const ProductPage = ({ product, defaultVariant }) => {
           <MediaInner>
             <Img
               src={selectedVariantImg || placeHolderImg}
-              onError={e => {
+              onError={(e) => {
                 e.target.onerror = null
                 e.target.src = placeHolderImg
               }}
@@ -107,7 +107,7 @@ const ProductPage = ({ product, defaultVariant }) => {
         <RelatedTopics>
           <H2>Kanskje du også liker</H2>
 
-          {topics.map(topic => {
+          {topics.map((topic) => {
             // We only want to show the first 4 products for a topic
             const cells = topic.items.edges
               .filter(({ node }) => node.id !== product.id)
@@ -124,7 +124,7 @@ const ProductPage = ({ product, defaultVariant }) => {
               <TopicMap>
                 <TopicTitle>{topic.name}</TopicTitle>
                 <List>
-                  {cells.map(cell => (
+                  {cells.map((cell) => (
                     <CategoryItem data={cell.item} key={cell.id} />
                   ))}
                 </List>
@@ -140,12 +140,10 @@ const ProductPage = ({ product, defaultVariant }) => {
 const ProductPageDataLoader = ({ data: { crystallize } }) => {
   const { product } = crystallize
   const headerItems = crystallize.headerItems?.children
-  const defaultVariant = product.variants?.find(v => v.isDefault)
+  const defaultVariant = product.variants?.find((v) => v.isDefault)
 
   if (!defaultVariant) {
-    return (
-      <Layout headerItems={headerItems}>Finnes ingen varianter</Layout>
-    )
+    return <Layout headerItems={headerItems}>Finnes ingen varianter</Layout>
   }
 
   return (

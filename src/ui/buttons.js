@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import is, { isNot } from 'styled-is';
-import { darken } from 'polished';
+import React from "react"
+import styled from "styled-components"
+import is, { isNot } from "styled-is"
+import { darken } from "polished"
 
-import { Spinner } from './spinner';
-import { colors } from './colors';
+import { Spinner } from "./spinner"
+import { colors } from "./colors"
 
 const Inner = styled.span`
   flex: 1 1 auto;
@@ -15,10 +15,10 @@ const Inner = styled.span`
   text-align: center;
   border-radius: 0.2rem;
   padding: 16px 25px;
-`;
+`
 
 const Outer = styled.button.attrs(() => ({
-  type: 'button'
+  type: "button",
 }))`
   display: inline-flex;
   border-radius: 0;
@@ -29,7 +29,7 @@ const Outer = styled.button.attrs(() => ({
   text-decoration: none;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
 
-  ${is('fullWidth')`
+  ${is("fullWidth")`
     width: 100%;
   `};
 
@@ -45,18 +45,18 @@ const Outer = styled.button.attrs(() => ({
       color: #333;
     }
   }
-`;
+`
 
 const Text = styled.span`
   position: relative;
   z-index: 2;
   transition: opacity 100ms, transform 100ms;
 
-  ${isNot('shown')`
+  ${isNot("shown")`
     opacity: 0;
     transform: scale(0.7);
   `};
-`;
+`
 
 const Loading = styled.span`
   position: absolute;
@@ -72,7 +72,7 @@ const Loading = styled.span`
   align-items: center;
   justify-content: center;
 
-  ${is('shown')`
+  ${is("shown")`
     opacity: 1;
     transform: none;
   `};
@@ -80,7 +80,7 @@ const Loading = styled.span`
   svg {
     height: 50%;
   }
-`;
+`
 
 export const Button = React.forwardRef(
   ({ children, loading, ...rest }, ref) => (
@@ -95,4 +95,4 @@ export const Button = React.forwardRef(
       </Inner>
     </Outer>
   )
-);
+)

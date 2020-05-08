@@ -1,18 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import { colors } from './colors';
-import { responsive } from './responsive';
+import { colors } from "./colors"
+import { responsive } from "./responsive"
 
 export const H1 = styled.h1`
   padding: 0 0 15px;
   font-size: 4rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: ${colors.frostbite};
 
   ${responsive.smAndLess} {
     font-size: 2.5rem;
   }
-`;
+`
 
 export const H2 = styled.h2`
   color: ${colors.frostbite};
@@ -22,7 +22,7 @@ export const H2 = styled.h2`
   ${responsive.smAndLess} {
     font-size: 1.5rem;
   }
-`;
+`
 
 export const H3 = styled.h3`
   color: ${colors.frostbite};
@@ -32,4 +32,4 @@ export const H3 = styled.h3`
   ${responsive.smAndLess} {
     font-size: 1.2rem;
   }
-`;
+`

@@ -24,7 +24,7 @@ export const Header = styled.div`
   margin-bottom: 50px;
   padding: 50px;
   max-width: 800px;
-  margin: ${p => (p.centerContent ? "0 auto" : "0 0 50px 0")};
+  margin: ${(p) => (p.centerContent ? "0 auto" : "0 0 50px 0")};
 
   p {
     font-size: 18px;

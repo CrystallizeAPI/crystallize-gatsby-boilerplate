@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react"
 // import queryString from 'query-string';
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import Layout from 'components/layout';
+import Layout from "components/layout"
 
-import OrderItems from 'components/order-items';
-import { H1, H3, Outer, Header, colors } from 'ui';
+import OrderItems from "components/order-items"
+import { H1, H3, Outer, Header, colors } from "ui"
 
-import BillingDetails from './billing-details';
+import BillingDetails from "./billing-details"
 
 const CustomHeader = styled(Header)`
   margin-bottom: 0;
   padding-bottom: 0;
-`;
+`
 
 const Line = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid ${colors.light};
-`;
+`
 
 const Loader = styled.div`
   margin: 5em;
   text-align: center;
-`;
+`
 
 function Confirmation() {
-  const router = useRouter();
-  const basket = useBasket();
+  const router = useRouter()
+  const basket = useBasket()
 
-  const { orderId, paymentMethod } = router.query;
+  const { orderId, paymentMethod } = router.query
 
   // static async getInitialProps({ req, ...rest }) {
   //   console.log(rest);
@@ -42,37 +42,37 @@ function Confirmation() {
   //   return { orderId: query.order_id, paymentMethod: query.payment_method };
   // }
 
-  const [emptied, setEmptied] = useState(false);
-  const [orderData, setOrderData] = useState(null);
+  const [emptied, setEmptied] = useState(false)
+  const [orderData, setOrderData] = useState(null)
 
   useEffect(() => {
     if (!emptied) {
-      basket.actions.empty();
-      setEmptied(true);
+      basket.actions.empty()
+      setEmptied(true)
     }
 
-    let url = `/api/order-confirmation?order_id=${orderId}`;
-    if (paymentMethod) url = `${url}&payment_method=${paymentMethod}`;
+    let url = `/api/order-confirmation?order_id=${orderId}`
+    if (paymentMethod) url = `${url}&payment_method=${paymentMethod}`
 
     fetch(url)
-      .then(res => res.json())
-      .then(data => setOrderData(data));
-  }, []);
+      .then((res) => res.json())
+      .then((data) => setOrderData(data))
+  }, [])
 
   if (!orderData || !orderData.data) {
-    return <Loader>Please wait. Getting receipt...</Loader>;
+    return <Loader>Please wait. Getting receipt...</Loader>
   }
 
-  const order = orderData.data.orders.get;
-  const { email } = order.customer.addresses[0];
+  const order = orderData.data.orders.get
+  const { email } = order.customer.addresses[0]
 
-  const items = order.cart.map(item => ({
+  const items = order.cart.map((item) => ({
     ...item,
     image: {
-      url: item.imageUrl
+      url: item.imageUrl,
     },
-    price: item.price.net
-  }));
+    price: item.price.net,
+  }))
 
   return (
     <Outer>
@@ -89,7 +89,7 @@ function Confirmation() {
         <OrderItems items={items} />
       </CustomHeader>
     </Outer>
-  );
+  )
 }
 
 export default function ConfirmationWithLayout(props) {
@@ -97,5 +97,5 @@ export default function ConfirmationWithLayout(props) {
     <Layout title="Order Summary">
       <Confirmation {...props} />
     </Layout>
-  );
+  )
 }

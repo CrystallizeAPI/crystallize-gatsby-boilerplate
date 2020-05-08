@@ -45,7 +45,7 @@ export default function FolderPage({ data }) {
         </Header>
         {children && (
           <List>
-            {children.map(child => (
+            {children.map((child) => (
               <Product data={child} key={child.id} />
             ))}
           </List>

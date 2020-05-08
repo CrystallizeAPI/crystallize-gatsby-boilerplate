@@ -1,24 +1,19 @@
-const {
-  vippsNormalizer
-} = require('../normalizer');
+const { vippsNormalizer } = require("../normalizer")
 
 const orderQueryNormalizer = async (
   orderData,
   paymentMethod,
-  {  vippsOrderId }
+  { vippsOrderId }
 ) => {
   switch (paymentMethod) {
-   
-     
-    case 'vipps':
-      return vippsNormalizer({ vippsOrderId }, orderData);
+    case "vipps":
+      return vippsNormalizer({ vippsOrderId }, orderData)
     default:
-      break;
+      break
   }
-  return true;
-};
+  return true
+}
 
 module.exports = {
   orderQueryNormalizer,
-
-};
+}

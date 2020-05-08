@@ -1,5 +1,5 @@
-const vippsNormalizer = require('./vipps');
+const vippsNormalizer = require("./vipps")
 
 module.exports = {
-  vippsNormalizer
-};
+  vippsNormalizer,
+}
