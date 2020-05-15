@@ -20,14 +20,18 @@
 <img alt="lighthouse" src="https://github.com/webmaeistro/gatsby-theme-crystallize/blob/master/rapport/perfect-lighthouse-ornforlag-crystallize.png" width="90%" />
 </p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/020d494c-4101-4dfe-9705-7e87c95856b6/deploy-status)](https://app.netlify.com/sites/ornforlag-crystallize-gatsby/deploys)
 
-### This is a fork with few modules added from work done by Håkon Krogh and the good folks @CrystallizeAPI
+This is a fork with few modules added from work done by Håkon Krogh and the good folks @CrystallizeAPI
 
 Original repo: https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate
 
 -added keywords to capture gatsbyjs telemetry
 -published to npmjs.
+-cyrpress
+-jest
+-concurrent mode 
+-react-experimental-dep
+-bump in versions
 -Gatsbyjs-ified nameing convention: ~crystallize-gatsby-boilerplate~ to gatsby-theme-crystallize
 -published to npmjs as a gatsby-theme
 
