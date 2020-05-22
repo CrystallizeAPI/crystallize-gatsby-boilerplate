@@ -66,7 +66,7 @@ const ProductPage = ({ product, defaultVariant }) => {
                 e.target.onerror = null
                 e.target.src = placeHolderImg
               }}
-              sizes={`(max-width: ${screen.sm}px) 400px, 600px`}
+              sizes={`(max-height: ${screen.sm}px) 400px, 600px`}
               alt={product.name}
             />
           </MediaInner>
