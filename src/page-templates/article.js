@@ -11,13 +11,13 @@ const Document = styled(Header)`
   margin: 0 auto;
   padding: 0 50px;
   img {
-    width: calc(100% + 300px);
+    width: auto;
     margin-left: -150px;
-    max-height: 400px;
-    max-width: 4000px;
+    max-height: 1024px;
+    max-width: 1980px;
     object-fit: contain;
     position: relative;
-    height: auto;
+    height: calc(100% + 300px);
   }
   h1 {
     padding-top: 50px;

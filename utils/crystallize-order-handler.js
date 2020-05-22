@@ -8,7 +8,7 @@ const {
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   ORDER_API_URL,
   CRYSTALLIZE_CORE_API_URL,
-} = require("../../config.js")
+} = require("../config.js")
 
 const apiCall = async (query, variables, operationName, update = false) => {
   return new Promise((resolve, reject) => {
