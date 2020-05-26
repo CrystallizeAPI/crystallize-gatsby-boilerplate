@@ -3,7 +3,7 @@ import Img from "@crystallize/react-image"
 import isEqual from "lodash/isEqual"
 import { graphql } from "gatsby"
 //Button
-import { H1, H2, screen, Outer } from "ui"
+import { H1, H2, Button, screen, Outer } from "ui"
 import CategoryItem from "components/category-item"
 import { CurrencyValue } from "components/currency-value"
 import VariantSelector from "components/variant-selector"
@@ -44,10 +44,10 @@ const ProductPage = ({ product, defaultVariant }) => {
 
   const onVariantChange = (variant) => setSelectedVariant(variant)
 
-  /* const order = async () => {
+   const order = async () => {
     console.log("todo: order")
   }
-*/
+
   const summaryComponent = product.components.find((c) => c.name === "Summary")
   const description = product.components.find((c) => c.name === "Description")
   const { topics } = product
@@ -94,7 +94,7 @@ const ProductPage = ({ product, defaultVariant }) => {
                 <CurrencyValue value={selectedVariant.price} />
               </strong>
             </Price>
-            {/* <Button onClick={order}>Bestill nå</Button> */}
+             <Button onClick={order}>Bestill nå</Button> 
           </ProductFooter>
         </Info>
       </Sections>

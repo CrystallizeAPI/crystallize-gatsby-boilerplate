@@ -51,7 +51,7 @@ function Confirmation() {
       setEmptied(true)
     }
 
-    let url = `/api/order-confirmation?order_id=${orderId}`
+    let url = `/.netlify/lamda/order-confirmation?order_id=${orderId}`
     if (paymentMethod) url = `${url}&payment_method=${paymentMethod}`
 
     fetch(url)
@@ -77,15 +77,14 @@ function Confirmation() {
   return (
     <Outer>
       <CustomHeader>
-        <H1>Order Summary</H1>
+        <H1>Orde Bekreftelse</H1>
         <p>
-          Your order (<strong>#{orderId}</strong>) has been confirmed. A copy of
-          your order has been sent to <strong>{email}</strong>.
+          Din ordre  (<strong>#{orderId}</strong>) har blitt gjennomført. En kopi av transaksjons utskriften er blitt sendt til <strong>{email}</strong>.
         </p>
         <Line />
         <BillingDetails order={order} />
         <Line />
-        <H3>Order Items</H3>
+        <H3>Bøker kjøpt</H3>
         <OrderItems items={items} />
       </CustomHeader>
     </Outer>

@@ -7,13 +7,13 @@ const {
   MY_CRYSTALLIZE_SECRET_TOKEN,
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   SENDGRID_API_KEY,
-  TERMS_URI = "https://ornforlag.no",
+  TERMS_URI = "https://ornforlag.no/terms",
   CHECKOUT_URI = "https://ornforlag.no/checkout",
 
   NGROK_URL,
 
   VIPPS_API_URL = "https://testapi.vipps.no",
-  HOST_URL = "http://localhost:3000",
+  HOST_URL = "http://127.0.0.1/,
 } = process.env
 
 const DEV = NODE_ENV !== "production"

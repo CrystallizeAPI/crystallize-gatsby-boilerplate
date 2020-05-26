@@ -71,22 +71,22 @@ class PaymentGateway extends React.Component {
             <SectionHeader />
             <Row>
               <InputGroup>
-                <Label htmlFor="firstname"> First Name</Label>
+                <Label htmlFor="firstname"> Fornavn</Label>
                 <Input
                   name="firstname"
                   type="text"
-                  placeholder="First name"
+                  placeholder="Ola"
                   value={firstName}
                   onChange={(e) => this.setState({ firstName: e.target.value })}
                   required
                 />
               </InputGroup>
               <InputGroup>
-                <Label htmlFor="lastname"> Last Name</Label>
+                <Label htmlFor="lastname"> Etternavn</Label>
                 <Input
                   name="lastname"
                   type="text"
-                  placeholder="Last name"
+                  placeholder="Nordmann"
                   value={lastName}
                   onChange={(e) => this.setState({ lastName: e.target.value })}
                   required
@@ -108,7 +108,7 @@ class PaymentGateway extends React.Component {
             </Row>
             <Row>
               <InputGroup>
-                <Label htmlFor="phone"> Phone</Label>
+                <Label htmlFor="phone"> Tlf nr</Label>
                 <Input
                   name="phone"
                   type="phone"
@@ -120,7 +120,7 @@ class PaymentGateway extends React.Component {
               </InputGroup>
             </Row>
 
-            <SectionHeader>Choose payment method</SectionHeader>
+            <SectionHeader>Betal med Vipps</SectionHeader>
             <PaymentMethods>
               <PaymentSelector>
                 <PaymentButton

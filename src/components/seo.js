@@ -75,7 +75,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `nb-NO`,
   meta: [],
-  description: ``,
+  description: `Ørn forlag Utgiver av bøker og digital media om Norsk natur og kultur.`,
 }
 
 SEO.propTypes = {

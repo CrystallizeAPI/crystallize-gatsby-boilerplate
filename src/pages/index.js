@@ -24,11 +24,11 @@ export default function IndexPage({ data }) {
 
   return (
     <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
-      <Outer>{" "}
-           <center>        <div>Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
+    <Header>
+      <Outer>
+           <center>        Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
            og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
-           medier.    </div>
-                </center>       
+           medier.                    </center>       
 
          {grid && (
           <StyledGrid
@@ -36,8 +36,9 @@ export default function IndexPage({ data }) {
             cellComponent={({ cell }) => <Product data={cell.item} />}
           />
         )}{" "}
-  
+       
       </Outer>{" "}
+      </Header>
     </Layout>
   )
 }
