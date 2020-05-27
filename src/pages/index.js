@@ -32,16 +32,14 @@ export default function IndexPage({ data }) {
             og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
             medier.{" "}
           </center>
-          </Outer>
-          </Header>
+        </Outer>
+      </Header>
       {grid && (
         <StyledGrid
           model={grid}
           cellComponent={({ cell }) => <Product data={cell.item} />}
         />
       )}{" "}
-      {" "}
-     
     </Layout>
   )
 }
