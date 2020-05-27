@@ -68,7 +68,7 @@ export const MediaInner = styled.div`
   width: 100%;
   max-width: 550px;
   height: 100%;
-  min-height: 314px;
+ 
   position: absolute;
   z-index: 10;
   display: flex;
@@ -84,17 +84,17 @@ export const MediaInner = styled.div`
     z-index: 10;
     top: 0;
     height: 100%;
-   min-height: 314px;
+   min-height: 214px;
   }
 `
 
 export const Info = styled.div`
   flex: 1 1 auto;
-  margin: 150 50px 0 50px;
+  margin: 0 50px 0 50px;
 
   ${responsive.smAndLess} {
     margin-left: 0;
-    margin-top: 150px;
+    margin-top: 50px;
   }
 `
 
