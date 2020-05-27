@@ -24,14 +24,15 @@ export default function IndexPage({ data }) {
 
   return (
     <Layout title="Velkommen til Ørn forlag" headerItems={headerItems}>
-    <Header>
-      <Outer>
-           <center>        Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
-           og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
-           medier.                    </center>       
-     
-       
-      </Outer>{" "}
+      <Header>
+        <Outer>
+          <center>
+            {" "}
+            Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
+            og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
+            medier.{" "}
+          </center>
+        </Outer>{" "}
       </Header>
       {grid && (
         <StyledGrid

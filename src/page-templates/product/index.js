@@ -45,8 +45,8 @@ const ProductPage = ({ product, defaultVariant }) => {
   const onVariantChange = (variant) => setSelectedVariant(variant)
 
   // const order = async () => {
-   // console.log("todo: order")
-//  }
+  // console.log("todo: order")
+  //  }
 
   const summaryComponent = product.components.find((c) => c.name === "Summary")
   const description = product.components.find((c) => c.name === "Description")
@@ -91,13 +91,18 @@ const ProductPage = ({ product, defaultVariant }) => {
           <ProductFooter>
             <Price>
               <strong>
-                Kr.<CurrencyValue value={selectedVariant.price} />,-
+                Kr.
+                <CurrencyValue value={selectedVariant.price} />
+                ,-
               </strong>
             </Price>
             <br />
             {` `}{" "}
-          <a href="/bestill"> <u>Bestill nå! </u>  </a>{" "}
-          {` `} 
+            <a href="/bestill">
+              {" "}
+              <u>Bestill nå! </u>{" "}
+            </a>{" "}
+            {` `}
             {/*  <Button onClick={order}>Bestill nå</Button> */}
           </ProductFooter>
         </Info>

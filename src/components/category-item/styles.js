@@ -37,7 +37,7 @@ export const ProductOuter = styled(Link)`
 
 export const ProductInner = styled.span`
   text-decoration: none;
- height: contain;
+  height: contain;
   position: relative;
   z-index: 10;
   display: flex;

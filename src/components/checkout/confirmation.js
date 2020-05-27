@@ -79,7 +79,9 @@ function Confirmation() {
       <CustomHeader>
         <H1>Orde Bekreftelse</H1>
         <p>
-          Din ordre  (<strong>#{orderId}</strong>) har blitt gjennomført. En kopi av transaksjons utskriften er blitt sendt til <strong>{email}</strong>.
+          Din ordre (<strong>#{orderId}</strong>) har blitt gjennomført. En kopi
+          av transaksjons utskriften er blitt sendt til <strong>{email}</strong>
+          .
         </p>
         <Line />
         <BillingDetails order={order} />

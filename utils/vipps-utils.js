@@ -3,7 +3,7 @@ const {
   VIPPS_USERNAME,
   VIPPS_PASSWORD,
   VIPPS_API_URL,
-/*  VIPPS_MERCHANT_SERIAL,
+  /*  VIPPS_MERCHANT_SERIAL,
   NGROK_URL, */
 } = require("../config")
 

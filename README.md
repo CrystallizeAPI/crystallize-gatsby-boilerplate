@@ -20,7 +20,6 @@
 <img alt="lighthouse" src="https://github.com/webmaeistro/gatsby-theme-crystallize/blob/master/rapport/perfect-lighthouse-ornforlag-crystallize.png" width="90%" />
 </p>
 
-
 This is a fork with few modules added from work done by Håkon Krogh and the good folks @CrystallizeAPI
 
 Original repo: https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate
@@ -29,7 +28,7 @@ Original repo: https://github.com/CrystallizeAPI/crystallize-gatsby-boilerplate
 -published to npmjs.
 -cyrpress
 -jest
--concurrent mode 
+-concurrent mode
 -react-experimental-dep
 -bump in versions
 -Gatsbyjs-ified nameing convention: ~crystallize-gatsby-boilerplate~ to gatsby-theme-crystallize
@@ -81,6 +80,7 @@ Check it out, the starter and theme is Open Source and MIT licensed.
 
     ```sh
     cd crystallize-project
+    ```
 
 
     ```

@@ -85,7 +85,7 @@ export const MediaInner = styled.div`
     z-index: 10;
     top: 0;
     height: 100%;
-   min-height: 214px;
+    min-height: 214px;
   }
 `
 

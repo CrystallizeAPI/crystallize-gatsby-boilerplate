@@ -1,27 +1,27 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react"
+import Head from "next/head"
 
-import { useSettings } from 'components/settings-context';
-import { useBasket } from 'components/basket';
-import Layout from 'components/layout';
-import OrderItems from 'components/order-items';
-import { H1, Outer } from 'ui';
-import PaymentGateway from './payment-gateway';
-import { Inner, OrderItemsWrapper } from './styles';
+import { useSettings } from "components/settings-context"
+import { useBasket } from "components/basket"
+import Layout from "components/layout"
+import OrderItems from "components/order-items"
+import { H1, Outer } from "ui"
+import PaymentGateway from "./payment-gateway"
+import { Inner, OrderItemsWrapper } from "./styles"
 
 const Checkout = () => {
-  const basket = useBasket();
-  const settings = useSettings();
+  const basket = useBasket()
+  const settings = useSettings()
 
   if (!basket.state.ready) {
-    return 'Getting basket...';
+    return "Getting basket..."
   }
 
-  const { items } = basket.state;
-  const { currency } = settings;
+  const { items } = basket.state
+  const { currency } = settings
 
   if (!items.length) {
-    return <Outer>Basket is empty</Outer>;
+    return <Outer>Basket is empty</Outer>
   }
 
   return (
@@ -34,8 +34,8 @@ const Checkout = () => {
         </OrderItemsWrapper>
       </Inner>
     </Outer>
-  );
-};
+  )
+}
 
 export default function CheckoutLoader(props) {
   return (
@@ -45,5 +45,5 @@ export default function CheckoutLoader(props) {
       </Head>
       <Checkout {...props} />
     </Layout>
-  );
+  )
 }

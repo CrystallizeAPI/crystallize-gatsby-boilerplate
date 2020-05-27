@@ -17,7 +17,6 @@ export const CurrencyValue = ({ value }) => {
 
   return (
     <FormattedNumber
-      
       currency={data.crystallize.tenant.defaults.currency}
       value={value}
     />
