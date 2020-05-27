@@ -8,7 +8,7 @@ import CategoryItem from "components/category-item"
 import { CurrencyValue } from "components/currency-value"
 import VariantSelector from "components/variant-selector"
 import ShapeComponents from "components/shape-components"
-import { attributesToObject } from "utils/variants"
+import { attributesToObject } from "../../../utils/variants"
 
 import Layout from "components/layout"
 

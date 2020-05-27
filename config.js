@@ -13,7 +13,7 @@ const {
   NGROK_URL,
 
   VIPPS_API_URL = "https://testapi.vipps.no",
-  HOST_URL = "http://127.0.0.1/,
+  HOST_URL = "http://127.0.0.1"
 } = process.env
 
 const DEV = NODE_ENV !== "production"

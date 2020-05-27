@@ -1,143 +1,134 @@
 
-import React from 'react'
+import React from "react"
+import { navigate } from "gatsby-link"
+import Styles from "../components/layout/styles"
 
-import Layout from "components/layout"
-import { Form, Field } from 'react-final-form'
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
+export default function Contact() {
+  const [state, setState] = React.useState({})
 
-const BestillSide = () => (
-  <Layout>
-    <h1>Forhåndsbestilling av Guide Til Norges Fugleliv 2nd utgave</h1>
-    <a
-      href="https://ornforlag.no/utgivelser/guide-til-norges-fugleliv-2-utgave"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Besøk siden
-    </a>
-    <Form
-      onSubmit={onSubmit}
-      initialValues={{ land: 'Norge', antall: '1', bok: 'Guide til Norges fugleliv 2. utgave'}}
-      render={({ handleSubmit, form, submitting, pristine, values }) => (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Fornavn*</label>
-            <Field
-              name="Fornavn"
-              component="input"
-              type="text"
-              placeholder="Ola"
-            />
-          </div>
-          <div>
-            <label>Etternavn*</label>
-            <Field
-              name="Etternavn"
-              component="input"
-              type="text"
-              placeholder="Nordmann"
-            />
-          </div>
-          <div>
-            <label>Adresse 1*</label>
-            <Field
-              name="Adresse1"
-              component="input"
-              type="text"
-              placeholder="Eksempel gata 2"
-            />
-          </div>
-          <div>
-            <label>Adresse 2</label>
-            <Field
-              name="Adresse2"
-              component="input"
-              type="text"
-              placeholder=""
-            />
-          </div>
-          <div>
-            <label>Postnr.*</label>
-            <Field
-              name="Postnr"
-              component="input"
-              type="number"
-              placeholder="2212"
-            />
-          </div>
-          <div>
-            <label>Poststed*</label>
-            <Field
-              name="Poststed"
-              component="input"
-              type="text"
-              placeholder="Oslo"
-            />
-          </div>
-          <div>
-            <label>Land*</label>
-            <div>
-              <label>
-                <Field
-                  name="Land"
-                  component="input"
-                  type="radio"
-                  value="Norge"
-                />{' '}
-                Norge
-              </label>
-              <label>
-                <Field
-                  name="Land"
-                  component="input"
-                  type="radio"
-                  value="Sverige"
-                />{' '}
-                Sverige
-              </label>
-              <label>
-                <Field
-                  name="Land"
-                  component="input"
-                  type="radio"
-                  value="Danmark"
-                />{' '}
-                Danmark
-              </label>
-            </div>
-          </div>
-          <div>
-            <label>Antall kopier</label>
-            <Field
-              name="antall"
-              component="input"
-              type="number"
-              placeholder="1"
-            />
-          </div>
-         
-      
-          <div>
-            <label>Beskjed til forlaget</label>
-            <Field name="beskjed" component="textarea" placeholder="'skriv evt beskjed til forlaget her'" />
-          </div>
-          <div className="buttons">
-            <button type="submit" disabled={submitting || pristine}>
-              Bestill 
-            </button>
-            <button
-              type="button"
-              onClick={form.reset}
-              disabled={submitting || pristine}
-            >
-              Nullstil
-            </button>
-          </div>
-     
-        </form>
-      )}
-    />
-  </Layout>
-)
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
 
-export default BestillSide
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
+
+  return (
+    <Styles>
+      <h1>Forhåndsbestill Guide til Norges fugleliv - 2. utgave</h1>
+      <br />
+     <div> <center>På lager fra<strong> 6. juni 2020!</strong></center></div>
+      <form
+        name="bestill"
+        method="post"
+        action="/Bestilling gjennomført - kontakt Bjørn på bjorn@ornforlag.no ved spørsmål/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+          </label>
+        </p>
+        
+        <div>
+          <label>
+            Fornavn*:
+            
+            <input type="text" name="fornavn"   placeholder="Ola" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Etternavn*:
+            
+            <input type="text" name="etternavn"    placeholder="Nordmann" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Adresser 1*:
+          
+            <input type="text" name="adresse1" placeholder="Eksempel gata 2" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Adresse 2:
+            <br />
+            <input type="text" name="adresse2" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Postnr.*:
+            <br />
+            <input type="number" name="postnr"  placeholder="2212" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Poststed*:
+            <br />
+            <input type="text" name="poststed"  placeholder="Oslo" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Land*:
+            <br />
+            <input type="text" name="land" value="Norge" onChange={handleChange} />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Epost*:
+            
+            <input type="email" name="email" placeholder="din@epost.com" onChange={handleChange} />
+          </label>
+        </div>
+        
+        <div>
+          <label>
+            Antall bøker*:
+            
+            <input type="number" name="antall" value="1" onChange={handleChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Evt beskjed til forlaget:
+            
+            <textarea name="message" placeholder="Ved behov, melding her" onChange={handleChange} />
+          </label>
+          </div>
+       
+        <div>
+          <button type="submit">Bestill nå!</button>
+        </div>
+      </form>
+    </Styles>
+  )
+}

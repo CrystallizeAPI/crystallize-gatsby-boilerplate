@@ -25,6 +25,7 @@ const btn = (light, dark) => css`
     opacity: 0.6;
     cursor: not-allowed;
   }
+  
 `
 
 const btnDefault = css`
@@ -35,7 +36,7 @@ const btnPrimary = btn('#4f93ce', '#285f8f')
 
 export default styled.div`
   font-family: sans-serif;
-
+  
   h1 {
     text-align: center;
     color: #222;
