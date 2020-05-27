@@ -50,7 +50,7 @@ export const Media = styled.div`
   padding-top: 60%;
 
   ${responsive.mdAndLess} {
-    flex-basis: 45%;
+    flex-basis: 55%;
   }
 
   &:before {
@@ -68,7 +68,8 @@ export const MediaInner = styled.div`
   width: 100%;
   max-width: 550px;
   height: 100%;
- 
+  min-height: 214px;
+
   position: absolute;
   z-index: 10;
   display: flex;

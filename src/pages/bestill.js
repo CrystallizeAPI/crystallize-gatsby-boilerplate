@@ -1,7 +1,6 @@
 
 import React from "react"
 import { navigate } from "gatsby-link"
-import styled from "styled-components"
 import Layout from "components/layout"
 
 import { Outer } from "ui"
@@ -38,7 +37,7 @@ export default function Contact() {
     <Outer>
       <h1>Forhåndsbestill Guide til Norges fugleliv - 2. utgave</h1>
       <br />
-     <div> <center>På lager fra<strong> 6. juni 2020!</strong></center></div>
+     <div> <center>På lager fra<strong> 8. juni 2020!</strong></center></div>
       <form
         name="bestill"
         method="post"
@@ -101,7 +100,7 @@ export default function Contact() {
           <label>
             Land*:
             <br />
-            <input type="text" name="land" value="Norge" onChange={handleChange} />
+            <input type="text" name="land" placeholder="Norge" onChange={handleChange} />
           </label>
         </div>
 
@@ -117,7 +116,7 @@ export default function Contact() {
           <label>
             Antall bøker*:
             
-            <input type="number" name="antall" value="1" onChange={handleChange} />
+            <input type="number" name="antall" placeholder="1" onChange={handleChange} />
           </label>
         </div>
         <div>

@@ -29,16 +29,16 @@ export default function IndexPage({ data }) {
            <center>        Ørn forlag brer sine vide vinger over sentrale deler av norsk natur,
            og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
            medier.                    </center>       
-
-         {grid && (
-          <StyledGrid
-            model={grid}
-            cellComponent={({ cell }) => <Product data={cell.item} />}
-          />
-        )}{" "}
+     
        
       </Outer>{" "}
       </Header>
+      {grid && (
+        <StyledGrid
+          model={grid}
+          cellComponent={({ cell }) => <Product data={cell.item} />}
+        />
+      )}{" "}
     </Layout>
   )
 }

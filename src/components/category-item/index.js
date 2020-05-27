@@ -69,7 +69,7 @@ class CategoryItem extends React.Component {
           </ImageWrapper>
           <ContentLine right>
             <Price>
-              <CurrencyValue value={price} />
+              Kr.<CurrencyValue value={price} />,-
             </Price>
           </ContentLine>
         </ProductInner>
