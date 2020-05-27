@@ -1,8 +1,10 @@
 
 import React from "react"
 import { navigate } from "gatsby-link"
-import Styles from "../components/layout/styles"
+import styled from "styled-components"
+import Layout from "components/layout"
 
+import { Outer } from "ui"
 function encode(data) {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -32,14 +34,15 @@ export default function Contact() {
   }
 
   return (
-    <Styles>
+    <Layout>
+    <Outer>
       <h1>Forhåndsbestill Guide til Norges fugleliv - 2. utgave</h1>
       <br />
      <div> <center>På lager fra<strong> 6. juni 2020!</strong></center></div>
       <form
         name="bestill"
         method="post"
-        action="/Bestilling gjennomført - kontakt Bjørn på bjorn@ornforlag.no ved spørsmål/"
+        action="/utgivelser/guide-til-norges-fugleliv/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
@@ -55,21 +58,21 @@ export default function Contact() {
         <div>
           <label>
             Fornavn*:
-            
+            <br />
             <input type="text" name="fornavn"   placeholder="Ola" onChange={handleChange} />
           </label>
         </div>
         <div>
           <label>
             Etternavn*:
-            
+            <br />
             <input type="text" name="etternavn"    placeholder="Nordmann" onChange={handleChange} />
           </label>
         </div>
         <div>
           <label>
             Adresser 1*:
-          
+            <br />
             <input type="text" name="adresse1" placeholder="Eksempel gata 2" onChange={handleChange} />
           </label>
         </div>
@@ -105,7 +108,7 @@ export default function Contact() {
         <div>
           <label>
             Epost*:
-            
+            <br />
             <input type="email" name="email" placeholder="din@epost.com" onChange={handleChange} />
           </label>
         </div>
@@ -120,15 +123,16 @@ export default function Contact() {
         <div>
           <label>
             Evt beskjed til forlaget:
-            
+            <br />
             <textarea name="message" placeholder="Ved behov, melding her" onChange={handleChange} />
           </label>
           </div>
-       
+          <br />
         <div>
-          <button type="submit">Bestill nå!</button>
+          <button type="submit">[Bestill nå!]</button>
         </div>
       </form>
-    </Styles>
+     </Outer>
+    </Layout>
   )
 }

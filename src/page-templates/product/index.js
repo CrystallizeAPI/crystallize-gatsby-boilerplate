@@ -94,7 +94,10 @@ const ProductPage = ({ product, defaultVariant }) => {
                 <CurrencyValue value={selectedVariant.price} />
               </strong>
             </Price>
-             <Button onClick={order}>Bestill nå</Button> 
+            {` `}{" "}
+          <a href="/bestill"> Trykk her for forhåndsbestilling! </a>{" "}
+          {` `} 
+            {/*  <Button onClick={order}>Bestill nå</Button> */}
           </ProductFooter>
         </Info>
       </Sections>
