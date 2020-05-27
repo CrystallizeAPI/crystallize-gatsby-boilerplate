@@ -41,6 +41,7 @@
         "prop-types": "^15.7.2",
         "react": "0.0.0-experimental-5faf377df",
         "react-dom": "0.0.0-experimental-5faf377df",
+        "react-final-form": "^6.4.0",
         "react-head": "^3.3.0",
         "react-helmet": "^5.2.1",
         "react-intl": "^4.5.1",
