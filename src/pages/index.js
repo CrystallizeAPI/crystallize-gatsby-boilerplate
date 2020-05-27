@@ -9,7 +9,7 @@ import { Outer, Header } from "ui"
 const StyledGrid = styled(Grid)`
   grid-gap: 1rem;
 
-  @media (max-width: 767px) {
+  @media (max-width: 567px) {
     grid-template-columns: 1fr !important;
   }
 `
@@ -32,14 +32,16 @@ export default function IndexPage({ data }) {
             og bærer kunnskap ut til folket gjennom fysiske såvel som digitale
             medier.{" "}
           </center>
-        </Outer>{" "}
-      </Header>
+          </Outer>
+          </Header>
       {grid && (
         <StyledGrid
           model={grid}
           cellComponent={({ cell }) => <Product data={cell.item} />}
         />
       )}{" "}
+      {" "}
+     
     </Layout>
   )
 }
