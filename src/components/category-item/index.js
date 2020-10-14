@@ -1,6 +1,6 @@
 import React from "react"
 
-import { useT } from "lib/i18n"
+import { useT, useLocale } from "lib/i18n"
 import { screen, H3 } from "ui"
 import {
   Outer,
@@ -16,6 +16,8 @@ import {
 
 export default function CategoryItem({ data, gridCell, gridTotalColSpan }) {
   const t = useT()
+  const locale = useLocale()
+
   if (!data) {
     return null
   }
@@ -48,9 +50,13 @@ export default function CategoryItem({ data, gridCell, gridTotalColSpan }) {
     )
   }
 
-  const { price, image } = variants
+  const { priceVariants, image } = variants
     ? variants.find((variant) => variant.isDefault)
     : {}
+
+  const { price, currency } = priceVariants?.find(
+    (pv) => pv.identifier === locale.priceVariant
+  )
 
   return (
     <ProductOuter to={path}>
@@ -62,7 +68,7 @@ export default function CategoryItem({ data, gridCell, gridTotalColSpan }) {
           <Img {...image} alt={name} sizes={imageSizes} />
         </ImageWrapper>
         <ContentLine right>
-          <Price>{t("common.price", { value: price })}</Price>
+          <Price>{t("common.price", { value: price, currency })}</Price>
         </ContentLine>
       </ProductInner>
     </ProductOuter>
