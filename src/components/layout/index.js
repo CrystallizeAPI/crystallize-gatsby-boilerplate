@@ -1,10 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import "./global.css"
-
 import Header from "./header"
 import { Outer } from "ui"
+import GlobalStyle from "ui/global"
 import SEO from "components/seo"
 import { useT } from "lib/i18n"
 
@@ -15,6 +14,7 @@ const Layout = ({ headerItems, children, title }) => {
 
   return (
     <>
+      <GlobalStyle />
       <SEO title={title} />
       <Header headerItems={headerItems} />
       <main>{children}</main>

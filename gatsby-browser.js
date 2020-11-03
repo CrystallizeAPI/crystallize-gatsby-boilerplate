@@ -6,5 +6,8 @@
 
 import wrapWithLocaleProvider from "./wrap-with-locale-provider"
 import "video.js/dist/video-js.css"
+import "rc-slider/assets/index.css"
+import 'dashjs';
+import 'videojs-contrib-dash';
 
 export const wrapPageElement = wrapWithLocaleProvider
