@@ -23,7 +23,7 @@ const Layout = ({ headerItems, children, title }) => {
           <span
             dangerouslySetInnerHTML={{
               __html: t("layout.builtWith", {
-                link: `<a href="https://www.crystallize.com">Crystallize</a>`,
+                link: `<a href="https://www.gatsbyjs.org">Gatsby</a>`,
               }),
             }}
           />
@@ -31,7 +31,7 @@ const Layout = ({ headerItems, children, title }) => {
           <span
             dangerouslySetInnerHTML={{
               __html: t("layout.poweredBy", {
-                link: `<a href="https://www.gatsbyjs.org">Gatsby</a>`,
+                link: `<a href="https://www.crystallize.com">Crystallize</a>`,
               }),
             }}
           />
