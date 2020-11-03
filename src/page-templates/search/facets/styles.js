@@ -1,12 +1,61 @@
 import styled from "styled-components"
+import is from "styled-is"
+
+import { responsive, Button } from "ui"
+
+export const FacetsMobileButtonWrap = styled.div`
+  padding: 0 15px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: flex-end;
+`
+
+export const FacetsMobileButton = styled(Button)`
+  ${responsive.mdAndMore} {
+    display: none;
+  }
+`
+
+export const FacetsMobileShowResults = styled.div`
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  ${responsive.mdAndMore} {
+    display: none;
+  }
+`
 
 export const FacetsWrapper = styled.div`
-  grid-area: facets;
-  max-width: 300px;
+  display: none;
+
+  ${responsive.smAndLess} {
+    ${is("$show")`
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 99;
+      overflow-x: auto;
+      background: #fff;
+      padding: 100px 15px;
+    `};
+  }
+
+  ${responsive.mdAndMore} {
+    grid-area: facets;
+    max-width: 300px;
+    display: block;
+  }
 `
+
 export const Facet = styled.div`
   border-top: 1px solid #dfdfdf;
   padding-top: 35px;
+
   &:not(:last-child) {
     margin-bottom: 35px;
   }

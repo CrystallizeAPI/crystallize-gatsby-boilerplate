@@ -7,7 +7,7 @@ import Layout from "components/layout"
 import Product from "components/category-item"
 import ShapeComponents from "components/shape-components"
 
-import Search from "../page-components/search"
+import Search from "../page-templates/search"
 
 export const List = styled.div`
   display: grid;

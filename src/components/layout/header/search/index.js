@@ -3,7 +3,7 @@ import produce from "immer"
 import { navigate, Link } from "gatsby"
 
 import { useT } from "lib/i18n"
-import { doSearch } from "lib/rest-api"
+import { doSearch } from "lib/api"
 import { useOnOutsideClick } from "components/outside-click"
 import { defaultSpec, SEARCH_QUERY } from "lib/search"
 
@@ -117,7 +117,7 @@ export default function Search() {
   function onSubmit(e) {
     e.preventDefault()
 
-    navigate(`/search?searchTerm=${spec.filter.searchTerm}`)
+    navigate(`/search?searchTerm=${spec.filter.searchTerm || ""}`)
 
     dispatch({ action: BLUR })
   }

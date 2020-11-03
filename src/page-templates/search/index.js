@@ -4,7 +4,7 @@ import { navigate } from "gatsby"
 import produce from "immer"
 
 import { useT, useLocale } from "lib/i18n"
-import { doSearch } from "lib/rest-api"
+import { doSearch } from "lib/api"
 import { SEARCH_QUERY, urlToSpec, queryStringToObject } from "lib/search"
 
 import { Wrapper, SearchFooter, Header } from "./styles"
@@ -35,11 +35,7 @@ async function loadPage(spec) {
   } = data ?? {}
 
   return {
-    items: search.edges
-      .filter(({ node }) => node.type === "product")
-      .map(({ node }) => ({ ...node })),
-    pageInfo: search.pageInfo,
-    totalCount: search.aggregations.totalResults,
+    search,
     aggregations,
   }
 }
@@ -94,7 +90,7 @@ function Search(props) {
     navigate(`${pathname}/?${newSearchString}`, { replace: true })
   }
 
-  function changePage({ direction }) {
+  function changePage(direction) {
     if (direction === "nextPage") {
       changeQuery((query) => {
         query.after = data.search.pageInfo.endCursor
@@ -116,7 +112,7 @@ function Search(props) {
     })
   }
 
-  const handleOrderBy = (orderBy, index) => {
+  function handleOrderBy(orderBy, index) {
     changeQuery((query) => {
       if (index > 0) {
         query.orderby = orderBy.value
@@ -138,7 +134,8 @@ function Search(props) {
             <h3>
               {t("search.foundResults", {
                 count:
-                  spec.filter.searchTerm !== "searching" && data.totalCount,
+                  spec.filter.searchTerm !== "searching" &&
+                  data.search.aggregations.totalResults,
               })}
             </h3>
           )}
@@ -148,12 +145,13 @@ function Search(props) {
       <Facets
         aggregations={data?.aggregations ?? {}}
         changeQuery={changeQuery}
+        totalResults={data?.search?.aggregations?.totalResults}
         spec={spec}
       />
       <Results
-        items={data?.items ?? []}
+        edges={data?.search?.edges ?? []}
         navigate={changePage}
-        pageInfo={data?.pageInfo ?? []}
+        pageInfo={data?.search?.pageInfo ?? {}}
       />
     </Wrapper>
   )

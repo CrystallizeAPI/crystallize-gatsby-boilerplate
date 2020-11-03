@@ -22,7 +22,8 @@ module.exports = {
       searchPlaceholder: "Search",
     },
     search: {
-      foundResults: "Found {{count}} matching results",
+      foundResults: "Found {{count}} matching result",
+      foundResults_plural: "Found {{count}} matching results",
       orderTitle: "Order by",
       order: {
         ITEM_NAME_ASC: "Name ascending",
@@ -32,7 +33,10 @@ module.exports = {
         STOCK_ASC: "Stock ascending",
         STOCK_DESC: "Stock descending",
       },
+      filterResults: "Filter results",
       facets: {
+        viewNResults: "Show {{count}} result",
+        viewNResults_plural: "Show {{count}} results",
         price: {
           title: "Price",
           min: "Minimum price",

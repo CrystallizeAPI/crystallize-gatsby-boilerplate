@@ -1,19 +1,34 @@
 import styled from "styled-components"
 import Image from "@crystallize/react-image"
 
+import { responsive } from "ui"
+
 export const Result = styled.div``
 
 export const Wrapper = styled.div`
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 70px;
-  display: grid;
-  grid-gap: 40px;
-  grid-template-columns: 300px 1fr 1fr 1fr;
-  grid-template-areas:
-    "spec spec spec spec "
-    "facets products products products ";
+
+  ${responsive.mdAndMore} {
+    display: grid;
+    padding: 0 70px;
+    grid-gap: 40px;
+    grid-template-columns: 300px 1fr 1fr 1fr;
+    grid-template-areas:
+      "spec spec spec spec "
+      "facets products products products ";
+  }
 `
+export const Header = styled.header`
+  ${responsive.mdAndMore} {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 25px;
+    align-items: center;
+    grid-area: spec;
+  }
+`
+
 export const SearchFooter = styled.div`
   display: flex;
   align-items: center;
@@ -40,6 +55,11 @@ export const PaginationWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 1rem 0;
+  padding: 0 15px;
+
+  ${responsive.mdAndMore} {
+    padding: 0;
+  }
 `
 export const Img = styled(Image)`
   width: 100%;
@@ -112,16 +132,6 @@ export const ListItem = styled.li`
       height: 250px;
     }
   }
-`
-
-export const Header = styled.header`
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-gap: 25px;
-  flex-direction: column;
-  padding: 0;
-  align-items: center;
-  grid-area: spec;
 `
 
 export const FacetsOuter = styled.div`

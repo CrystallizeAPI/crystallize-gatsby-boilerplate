@@ -11,7 +11,7 @@ function Pagination({ navigate, pageInfo }) {
     return null
   }
 
-  const handleButtonClick = (event) => {
+  function handleButtonClick(event) {
     event.stopPropagation()
 
     navigate(event.currentTarget.name)

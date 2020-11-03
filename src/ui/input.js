@@ -26,7 +26,7 @@ export const Input = styled.input`
   outline: none;
   padding: 12px 35px;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
 `
 
 export const InputSpinner = styled(Spinner)`
