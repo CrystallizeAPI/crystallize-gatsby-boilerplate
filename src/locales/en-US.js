@@ -19,6 +19,26 @@ module.exports = {
     layout: {
       builtWith: "Built with {{- link}}",
       poweredBy: "Powered by {{- link}}",
+      searchPlaceholder: "Search",
+    },
+    search: {
+      foundResults: "Found {{count}} matching results",
+      orderTitle: "Order by",
+      order: {
+        ITEM_NAME_ASC: "Name ascending",
+        ITEM_NAME_DESC: "Name descending",
+        PRICE_ASC: "Price ascending",
+        PRICE_DESC: "Price descending",
+        STOCK_ASC: "Stock ascending",
+        STOCK_DESC: "Stock descending",
+      },
+      facets: {
+        price: {
+          title: "Price",
+          min: "Minimum price",
+          max: "Maximum price",
+        },
+      },
     },
   },
 }
