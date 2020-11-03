@@ -33,7 +33,7 @@ export default function CategoryItem({ data, gridCell, gridTotalColSpan }) {
 
   if (type === "folder" || type === "document") {
     const images = data.components.find((c) => c.type === "images")
-    const image = images && images.content ? images.content.images[0] : null
+    const image = images?.content?.images?.[0]
 
     return (
       <Outer type={type} to={path}>
@@ -56,7 +56,10 @@ export default function CategoryItem({ data, gridCell, gridTotalColSpan }) {
 
   const { price, currency } = priceVariants?.find(
     (pv) => pv.identifier === locale.priceVariant
-  )
+  ) || {
+    price: "n/a",
+    currency: "eur",
+  }
 
   return (
     <ProductOuter to={path}>

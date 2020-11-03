@@ -56,7 +56,10 @@ const ProductPage = ({ product, defaultVariant }) => {
 
   const { price, currency } = selectedVariant.priceVariants.find(
     (pv) => pv.identifier === locale.priceVariant
-  )
+  ) || {
+    price: "n/a",
+    currency: "eur",
+  }
 
   return (
     <Outer>
@@ -65,10 +68,6 @@ const ProductPage = ({ product, defaultVariant }) => {
           <MediaInner>
             <Img
               src={selectedVariantImg || placeHolderImg}
-              onError={(e) => {
-                e.target.onerror = null
-                e.target.src = placeHolderImg
-              }}
               sizes={`(max-width: ${screen.sm}px) 400px, 600px`}
               alt={product.name}
             />
@@ -121,7 +120,7 @@ const ProductPage = ({ product, defaultVariant }) => {
             }
 
             return (
-              <TopicMap key={topic.id} >
+              <TopicMap key={topic.id}>
                 <TopicTitle>{topic.name}</TopicTitle>
                 <List>
                   {cells.map((cell) => (
@@ -149,10 +148,7 @@ const ProductPageDataLoader = ({ data: { crystallize } }) => {
 
   return (
     <Layout headerItems={headerItems} title={product.name}>
-      <ProductPage
-        product={product}
-        defaultVariant={defaultVariant}
-      />
+      <ProductPage product={product} defaultVariant={defaultVariant} />
     </Layout>
   )
 }
